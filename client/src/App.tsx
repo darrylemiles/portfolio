@@ -1,8 +1,13 @@
-import React from 'react'
+import { RouterProvider } from 'react-router-dom'
 
-const App = () => {
+import React from 'react'
+import router from './routes'
+
+const App: React.FC = () => {
   return (
-    <div>App</div>
+    <React.Fragment>
+      <RouterProvider router={router} />
+    </React.Fragment>
   )
 }
 
