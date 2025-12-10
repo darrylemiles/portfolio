@@ -5,7 +5,7 @@ import Loadable from '../components/Loadable';
 
 const Home = Loadable(lazy(() => import('../pages/Home')));
 
-const AbsoluteRoutes = {
+const PublicRoutes = {
   path: '/',
   children: [
     {
@@ -15,4 +15,4 @@ const AbsoluteRoutes = {
   ]
 };
 
-export default AbsoluteRoutes;
+export default PublicRoutes;
