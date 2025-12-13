@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 
 import Loadable from '../components/Loadable';
-import Wrapper from '../layout/Wrapper';
 
 // pages
 const Home = Loadable(lazy(() => import('../pages/Home')));
@@ -12,11 +11,11 @@ const PublicRoutes = {
   children: [
     {
       path: '/',
-      element: <Wrapper children={<Home />} />
+      element: <Home />
     },
     {
       path: '*',
-      element: <Wrapper children={<NotFound />} />
+      element: <NotFound />
     },
   ]
 };
