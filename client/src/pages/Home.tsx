@@ -1,7 +1,8 @@
-import { Container, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 
 import React from 'react'
 import AboutMe from '../sections/home/AboutMe'
+import Container from '../components/Container'
 
 const Home: React.FC = () => {
   return (
