@@ -5,7 +5,7 @@ import AboutMe from '../sections/home/AboutMe'
 
 const Home: React.FC = () => {
   return (
-    <Container sx={{ py: 2 }}>
+    <Container>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, md: 4 }}>
           <AboutMe />
