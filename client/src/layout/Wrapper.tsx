@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react'
 
-type WrapperProps = {
+interface WrapperProps {
   children: React.ReactNode;
 }
 

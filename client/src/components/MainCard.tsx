@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 
-type MainCardProps = {
+interface MainCardProps {
   children: React.ReactNode;
 };
 
