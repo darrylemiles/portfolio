@@ -12,8 +12,8 @@ export const appTheme = createTheme({
     primary: { main: '#4C78FF', dark: '#3956CC', light: '#709EFF' },
     secondary: { main: '#23D1D5' },
     background: {
-      default: '#0A1623',
-      paper: '#0D1B2A'
+      default: backgroundGradient,
+      paper: 'rgba(26, 25, 25, 0.95)'
     },
     text: {
       primary: '#E6F0FF',
