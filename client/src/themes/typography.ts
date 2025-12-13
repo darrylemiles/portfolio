@@ -1,5 +1,5 @@
 const typography = {
-  fontFamily: 'Roboto, sans-serif',
+  fontFamily: 'Poppins, sans-serif',
   h1: { fontWeight: 700, fontSize: '2.25rem', lineHeight: 1.2 },
   h2: { fontWeight: 700, fontSize: '2rem', lineHeight: 1.25 },
   h3: { fontWeight: 600, fontSize: '1.75rem', lineHeight: 1.3 },
