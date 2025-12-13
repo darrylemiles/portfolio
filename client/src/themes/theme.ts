@@ -9,7 +9,7 @@ export const backgroundGradient = `radial-gradient(1000px 600px at 70% 10%, rgba
 export const appTheme = createTheme({
   palette: {
     mode: 'dark',
-    primary: { main: '#4C78FF' },
+    primary: { main: '#4C78FF', dark: '#3956CC', light: '#709EFF' },
     secondary: { main: '#23D1D5' },
     background: {
       default: '#0A1623',

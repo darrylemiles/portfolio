@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { Box } from '@mui/material'
-import { backgroundGradient } from '../themes'
+import { backgroundGradient } from '../themes/theme'
 
 type WrapperProps = {
   children?: React.ReactNode
