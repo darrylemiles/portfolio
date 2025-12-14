@@ -18,6 +18,7 @@ const MainCard: React.FC<MainCardProps> = ({ children, title }) => {
         borderRadius: 2.5,
         p: 3,
         boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+        width: '100%',
       }}
     >
       {title && (
