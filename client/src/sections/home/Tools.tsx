@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import { FaGitAlt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io5'
-import { DiMongodb, DiMysql } from 'react-icons/di'
+import { DiJira, DiMongodb, DiMysql } from 'react-icons/di'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { BsBootstrap } from 'react-icons/bs'
 import { SiMui, SiPostman } from 'react-icons/si'
@@ -10,6 +10,7 @@ import { FiCpu } from 'react-icons/fi'
 import React from 'react'
 import MainCard from '../../components/MainCard'
 import ToolCard from '../../components/ToolCard'
+import { VscAzureDevops } from 'react-icons/vsc'
 
 const tools = [
   {
@@ -59,6 +60,14 @@ const tools = [
   {
     icon: <FaGitAlt size={24} color='#D94935' />,
     title: 'Git & GitHub',
+  },
+  {
+    icon: <VscAzureDevops size={24} color='#2235F4' />,
+    title: 'ADO',
+  },
+  {
+    icon: <DiJira size={24} color='#1063CC' />,
+    title: 'Jira',
   },
 ]
 
