@@ -7,10 +7,11 @@ interface MainCardProps {
   title?: {
     text: string,
     icon?: React.ReactNode,
-  }
+  },
+  caption?: string
 };
 
-const MainCard: React.FC<MainCardProps> = ({ children, title, background }) => {
+const MainCard: React.FC<MainCardProps> = ({ children, title, background, caption }) => {
   return (
     <Box
       sx={theme => ({
@@ -22,17 +23,25 @@ const MainCard: React.FC<MainCardProps> = ({ children, title, background }) => {
         width: '100%',
       })}
     >
-      {title && (
-        <Stack direction="row" alignItems="center" spacing={2} mb={2}>
-          <Box>
-            {title.icon}
-          </Box>
+      <Box>
+        {title && (
+          <Stack direction="row" alignItems="center" spacing={2} mb={2}>
+            <Box>
+              {title.icon}
+            </Box>
 
-          <Typography variant='h5'>
-            {title.text}
+            <Typography variant='h5'>
+              {title.text}
+            </Typography>
+          </Stack>
+        )}
+
+        {caption && (
+          <Typography variant='caption' color="text.secondary" mb={2} display="block">
+            {caption}
           </Typography>
-        </Stack>
-      )}
+        )}
+      </Box>
 
       {children}
     </Box>
