@@ -8,10 +8,10 @@ interface ChipProps {
 const Chip: React.FC<ChipProps> = ({ text }) => {
   return (
     <Box
-      sx={{
-        background: theme => theme.palette.background.default,
-        color: '#8ec5ff',
-        border: '1px solid #8ec5ff',
+      sx={theme => ({
+        background: `#151B2A`,
+        color: theme.palette.secondary.main,
+        border: '1px solid #1A2E56',
         borderRadius: 2,
         px: 2,
         py: 0.5,
@@ -19,7 +19,7 @@ const Chip: React.FC<ChipProps> = ({ text }) => {
         alignItems: 'center',
         whiteSpace: 'nowrap',
         fontSize: '0.875rem',
-      }}
+      })}
     >
       <Typography variant='body2'>
         {text}
