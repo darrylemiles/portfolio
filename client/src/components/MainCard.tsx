@@ -3,23 +3,24 @@ import React from 'react'
 
 interface MainCardProps {
   children: React.ReactNode,
+  background?: string,
   title?: {
     text: string,
     icon?: React.ReactNode,
   }
 };
 
-const MainCard: React.FC<MainCardProps> = ({ children, title }) => {
+const MainCard: React.FC<MainCardProps> = ({ children, title, background }) => {
   return (
     <Box
-      sx={{
-        background: theme => theme.palette.background.paper,
+      sx={theme => ({
+        background: background || theme.palette.background.paper,
         border: '1px solid rgba(255, 255, 255, .08)',
         borderRadius: 2.5,
         p: 3,
         boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
         width: '100%',
-      }}
+      })}
     >
       {title && (
         <Stack direction="row" alignItems="center" spacing={2} mb={2}>
