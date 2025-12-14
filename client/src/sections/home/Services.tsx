@@ -14,7 +14,7 @@ const Services: React.FC = () => {
   ]
 
   return (
-    <MainCard title={{ text: 'Services', icon: <AnimateButton type='rotate'> <SettingOutlined style={{ fontSize: 23 }} /> </AnimateButton> }}>
+    <MainCard title={{ text: 'Services', icon: <AnimateButton type='rotate'> <SettingOutlined /> </AnimateButton> }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
         {services.map((service, index) => (
           <Chip text={service} key={index} />
