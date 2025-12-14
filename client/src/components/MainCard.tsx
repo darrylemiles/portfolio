@@ -26,9 +26,7 @@ const MainCard: React.FC<MainCardProps> = ({ children, title, background, captio
       <Box>
         {title && (
           <Stack direction="row" alignItems="center" spacing={2} mb={2}>
-            <Box>
-              {title.icon}
-            </Box>
+            {title.icon}
 
             <Typography variant='h5'>
               {title.text}
