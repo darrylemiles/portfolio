@@ -17,7 +17,7 @@ const Connect: React.FC = () => {
         <Button
           variant='contained'
           color='primary'
-          size='medium'
+          size='large'
           startIcon={<AimOutlined />}
         >
           Hire Me
@@ -26,7 +26,7 @@ const Connect: React.FC = () => {
         <Button
           variant='outlined'
           color='secondary'
-          size='medium'
+          size='large'
           startIcon={<LinkedinOutlined />}
         >
           LinkedIn
@@ -36,7 +36,7 @@ const Connect: React.FC = () => {
         <Button
           variant='outlined'
           color='secondary'
-          size='medium'
+          size='large'
           startIcon={<GithubOutlined />}
         >
           Github
