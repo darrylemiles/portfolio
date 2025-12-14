@@ -8,6 +8,8 @@ import Divider from '../components/Divider'
 // sections
 import AboutMe from '../sections/home/AboutMe'
 import Services from '../sections/home/Services'
+import Connect from '../sections/home/Connect'
+import Tools from '../sections/home/Tools'
 
 const Home: React.FC = () => {
   return (
@@ -24,13 +26,9 @@ const Home: React.FC = () => {
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
-          <AboutMe />
+          <Tools />
           <Divider />
-
-          <Services />
-          <Divider />
-
-          <Services />
+          <Connect />
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>

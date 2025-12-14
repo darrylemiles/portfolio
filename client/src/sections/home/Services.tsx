@@ -19,7 +19,7 @@ const Services: React.FC = () => {
         text: 'Services',
         icon: (
           <AnimateButton type='rotate'>
-            <SettingOutlined />
+            <SettingOutlined style={{ fontSize: 24 }} />
           </AnimateButton>
         )
       }}
