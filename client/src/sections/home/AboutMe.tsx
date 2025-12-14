@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
               sx={{
                 width: { xs: '20%', md: '100%' },
                 marginInline: 'auto',
-                borderRadius: 2.5,
+                borderRadius: 3,
                 aspectRatio: '1/1',
                 objectFit: 'cover',
 
