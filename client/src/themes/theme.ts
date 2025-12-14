@@ -10,7 +10,7 @@ export const appTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: { main: '#4C78FF', dark: '#3956CC', light: '#709EFF' },
-    secondary: { main: '#23D1D5' },
+    secondary: { main: '#8EB8C8' },
     background: {
       default: backgroundGradient,
       paper: 'rgba(26, 25, 25, 0.95)'
