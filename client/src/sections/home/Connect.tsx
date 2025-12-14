@@ -45,7 +45,7 @@ const Connect: React.FC = () => {
 
       <Box marginBlock={3}>
         <Typography variant='body2' color='text.secondary' sx={{ fontSize: 11, textAlign: 'center' }}> Made by Darryle Miles Bacay </Typography>
-        <Typography variant='body2' color='text.secondary' sx={{ fontSize: 11, textAlign: 'center' }}> © 2025 All rights reserved </Typography>
+        <Typography variant='body2' color='text.secondary' sx={{ fontSize: 11, textAlign: 'center' }}> © {new Date().getFullYear()} All rights reserved </Typography>
       </Box>
     </MainCard >
   )
