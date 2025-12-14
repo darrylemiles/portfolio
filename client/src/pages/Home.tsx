@@ -32,12 +32,8 @@ const Home: React.FC = () => {
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
-          <AboutMe />
+          <Connect />
           <Divider />
-
-          <Services />
-          <Divider />
-
           <Services />
         </Grid>
       </Grid>

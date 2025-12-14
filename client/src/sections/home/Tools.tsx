@@ -1,10 +1,10 @@
 import { Grid } from '@mui/material'
-import { FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
+import { FaGitAlt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io5'
 import { DiMongodb, DiMysql } from 'react-icons/di'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { BsBootstrap } from 'react-icons/bs'
-import { SiMui } from 'react-icons/si'
+import { SiMui, SiPostman } from 'react-icons/si'
 import { FiCpu } from 'react-icons/fi'
 
 import React from 'react'
@@ -52,6 +52,14 @@ const tools = [
     icon: <SiMui size={24} color='#0685FF' />,
     title: 'Material UI',
   },
+  {
+    icon: <SiPostman size={24} color='#FF6C37' />,
+    title: 'Postman',
+  },
+  {
+    icon: <FaGitAlt size={24} color='#D94935' />,
+    title: 'Git & GitHub',
+  },
 ]
 
 const Tools: React.FC = () => {
@@ -61,7 +69,7 @@ const Tools: React.FC = () => {
         text: 'Tools & Technologies',
         icon: <FiCpu size={24} />
       }}
-      caption="Frameworks, languages, and libraries I use"
+      caption="Frameworks, languages, tools, and libraries I use"
     >
       <Grid container spacing={2} columns={12}>
         {tools.map((tool, index) => (
