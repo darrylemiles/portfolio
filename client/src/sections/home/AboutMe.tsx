@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
           <Box sx={{ display: 'flex' }}>
             <Box
               component='img'
-              src='https://zerochad.github.io/Portfolio-Zero/assets/frog-C_nYFjMY.jpg'
+              src='https://avatars.githubusercontent.com/u/137563011?s=400&u=71da270fe08fe3b6ab43e481bb8c92d870214f13&v=4'
               alt='Profile Picture'
               sx={{
                 width: { xs: '20%', md: '100%' },
@@ -32,7 +32,7 @@ const AboutMe: React.FC = () => {
               Darryle Miles Bacay
             </Typography>
 
-            <Typography variant='body2'>
+            <Typography variant='body2' color='primary'>
               I am a full stack web developer.
             </Typography>
 
@@ -43,7 +43,6 @@ const AboutMe: React.FC = () => {
               fullWidth
               startIcon={<AimOutlined />}
               sx={{
-                borderRadius: 3,
                 mt: 2
               }}
             >
@@ -52,7 +51,7 @@ const AboutMe: React.FC = () => {
           </Box>
         </Grid>
       </Grid>
-    </MainCard>
+    </MainCard >
   )
 }
 
