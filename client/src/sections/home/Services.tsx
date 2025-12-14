@@ -8,9 +8,11 @@ import { Box } from '@mui/material'
 const Services: React.FC = () => {
   const services = [
     'Full Stack Web Development',
-    'Mobile Apps',
+    'API Integration',
     'UI/UX Design',
-    'SEO Optimization'
+    'SEO Optimization',
+    'Database System',
+    'React Application',
   ]
 
   return (
