@@ -10,6 +10,7 @@ import AboutMe from '../sections/home/AboutMe'
 import Services from '../sections/home/Services'
 import Connect from '../sections/home/Connect'
 import Tools from '../sections/home/Tools'
+import Contact from '../sections/home/Contact'
 
 const Home: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const Home: React.FC = () => {
         <Grid size={{ xs: 12, md: 4 }}>
           <Connect />
           <Divider />
-          <Services />
+          <Contact />
         </Grid>
       </Grid>
     </Container>
