@@ -1,9 +1,8 @@
-import { Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 
 import React from 'react'
 
 // components
-import Container from '../components/Container'
 import Divider from '../components/Divider'
 
 // sections
