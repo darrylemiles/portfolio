@@ -20,6 +20,18 @@ export const appTheme = createTheme({
       secondary: '#A9B7D0'
     }
   },
+  shape: {
+    borderRadius: 3,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 15,
+        },
+      },
+    },
+  },
   typography,
 });
 
