@@ -11,12 +11,15 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 
+
 // styles
 import './styles/main.css'
+import { ToastContainer } from 'react-toastify'
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={appTheme}>
+      <ToastContainer />
       <CssBaseline />
       <RouterProvider router={router} />
     </ThemeProvider>
