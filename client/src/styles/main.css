@@ -17,3 +17,87 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.text-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+}
+
+.text-marquee__track {
+  display: flex;
+  gap: var(--marquee-gap, 48px);
+  white-space: nowrap;
+  will-change: transform;
+  animation: text-marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.text-marquee__item {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  /* default gradient */
+  background-image: linear-gradient(90deg, #7aa2ff, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-marquee__item:nth-child(5n + 1) {
+  background-image: linear-gradient(90deg, #60a5fa, #2563eb);
+}
+
+.text-marquee__item:nth-child(5n + 2) {
+  background-image: linear-gradient(90deg, #34d399, #10b981);
+}
+
+.text-marquee__item:nth-child(5n + 3) {
+  background-image: linear-gradient(90deg, #c084fc, #a855f7);
+}
+
+.text-marquee__item:nth-child(5n + 4) {
+  background-image: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.text-marquee__item:nth-child(5n + 5) {
+  background-image: linear-gradient(90deg, #fb7185, #ef4444);
+}
+
+@keyframes text-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-text {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.marquee-text--blue {
+  background-image: linear-gradient(90deg, #7aa2ff, #3b82f6);
+}
+
+.marquee-text--green {
+  background-image: linear-gradient(90deg, #34d399, #10b981);
+}
+
+.marquee-text--purple {
+  background-image: linear-gradient(90deg, #c084fc, #a855f7);
+}
+
+.marquee-text--yellow {
+  background-image: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.marquee-text--red {
+  background-image: linear-gradient(90deg, #fb7185, #ef4444);
+}
