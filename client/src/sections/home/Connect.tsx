@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
-import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons'
+import { GithubOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
@@ -14,6 +14,14 @@ const Connect: React.FC = () => {
       </Box>
 
       <Stack direction='row' flexWrap='wrap' justifyContent='center' gap={2} marginBlock={3}>
+        <Button
+          variant='contained'
+          color='primary'
+          size='large'
+          startIcon={<PhoneOutlined />}
+        >
+          Contact Me
+        </Button>
 
         <Button
           variant='outlined'
