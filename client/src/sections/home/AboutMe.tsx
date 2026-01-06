@@ -11,12 +11,16 @@ import DownloadCvButton from '../../components/DownloadCvButton'
 import Chip from '../../components/Chip'
 
 const AboutMe: React.FC = () => {
-  const date = new Date();
+  const today = new Date();
+  const birthDate = new Date(2003, 10, 25);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hasBirthdayPassedThisYear =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
 
-  const year = date.getFullYear();
-  const birthYear = 2003;
-
-  const age = year - birthYear;
+  if (!hasBirthdayPassedThisYear) {
+    age -= 1;
+  }
 
   return (
     <MainCard>
