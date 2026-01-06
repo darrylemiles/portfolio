@@ -20,19 +20,59 @@ const CvViewer: React.FC = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between">
-        <Stack direction="row" alignItems="center" spacing={1}>
-          <Button variant="outlined" color="inherit" startIcon={<FaHome />} onClick={() => navigate('/')}>Home</Button>
-          <Typography variant="h5" fontWeight={600}>Darryle Miles' Curriculum Vitae</Typography>
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        alignItems={{ xs: 'stretch', sm: 'center' }}
+        justifyContent={{ xs: 'flex-start', sm: 'space-between' }}
+        spacing={1}
+      >
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          alignItems={{ xs: 'stretch', sm: 'center' }}
+          spacing={1}
+          sx={{ flex: 1 }}
+        >
+          <Button
+            variant="outlined"
+            color="inherit"
+            startIcon={<FaHome />}
+            onClick={() => navigate('/')}
+            sx={{ width: { xs: '100%', sm: 'auto' } }}
+          >
+            Home
+          </Button>
+          <Typography
+            variant="h5"
+            fontWeight={600}
+            sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem' }, textAlign: { xs: 'center', sm: 'left' } }}
+          >
+            Darryle Miles' Curriculum Vitae
+          </Typography>
         </Stack>
-        <Stack direction="row" spacing={1}>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={1}
+          sx={{ width: { xs: '100%', sm: 'auto' } }}
+        >
           <Tooltip title="Download PDF">
-            <Button variant="contained" color="primary" startIcon={<FaDownload />} onClick={downloadCv}>
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<FaDownload />}
+              onClick={downloadCv}
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
+            >
               Download
             </Button>
           </Tooltip>
           <Tooltip title="Open in new tab">
-            <Button variant="outlined" color="inherit" startIcon={<FaExternalLinkAlt />} onClick={openInNewTab}>
+            <Button
+              variant="outlined"
+              color="inherit"
+              startIcon={<FaExternalLinkAlt />}
+              onClick={openInNewTab}
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
+            >
               Open
             </Button>
           </Tooltip>
