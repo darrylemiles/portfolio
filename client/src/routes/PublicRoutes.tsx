@@ -6,6 +6,7 @@ import Wrapper from '../layout/Wrapper';
 // pages
 const Home = Loadable(lazy(() => import('../pages/Home')));
 const NotFound = Loadable(lazy(() => import('../pages/NotFound')));
+const CvViewer = Loadable(lazy(() => import('../pages/CvViewer')));
 
 const PublicRoutes = {
   path: '/',
@@ -13,6 +14,10 @@ const PublicRoutes = {
     {
       path: '/',
       element: <Wrapper children={<Home />} />
+    },
+    {
+      path: '/cv',
+      element: <Wrapper children={<CvViewer />} />
     },
     {
       path: '*',
