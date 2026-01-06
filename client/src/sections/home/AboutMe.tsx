@@ -1,8 +1,7 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
-import { AimOutlined } from '@ant-design/icons'
 import DownloadCvButton from '../../components/DownloadCvButton'
 
 const AboutMe: React.FC = () => {
