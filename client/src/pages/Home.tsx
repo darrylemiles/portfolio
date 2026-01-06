@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material'
+import { Box, Container, Grid } from '@mui/material'
 
 import React from 'react'
 
@@ -12,34 +12,42 @@ import Connect from '../sections/home/Connect'
 import Tools from '../sections/home/Tools'
 import Contact from '../sections/home/Contact'
 import Projects from '../sections/home/Projects'
+import GithubProfile from '../sections/home/GithubProfile'
+import MarqueCarousel from '../sections/home/MarqueCarousel'
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <Grid container spacing={2} columns={12}>
-        <Grid size={{ xs: 12, md: 4 }}>
-          <AboutMe />
-          <Divider />
+    <React.Fragment>
+      <Container>
+        <Grid container spacing={2} columns={12}>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <AboutMe />
+            <Divider />
 
-          <Services />
-          <Divider />
+            <Services />
+            <Divider />
 
-          <Projects />
+            <Projects />
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Tools />
+            <Divider />
+            <Connect />
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 4 }}>
+            <GithubProfile />
+            <Divider />
+            <Contact />
+          </Grid>
         </Grid>
+      </Container>
 
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Tools />
-          <Divider />
-          <Connect />
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Connect />
-          <Divider />
-          <Contact />
-        </Grid>
-      </Grid>
-    </Container>
+      <Box sx={{ mt: 3 }}>
+        <MarqueCarousel />
+      </Box>
+    </React.Fragment>
   )
 }
 
