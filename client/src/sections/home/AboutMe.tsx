@@ -3,6 +3,7 @@ import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
 import MainCard from '../../components/MainCard'
 import { AimOutlined } from '@ant-design/icons'
+import DownloadCvButton from '../../components/DownloadCvButton'
 
 const AboutMe: React.FC = () => {
   return (
@@ -36,18 +37,7 @@ const AboutMe: React.FC = () => {
               I am a full stack web developer.
             </Typography>
 
-            <Button
-              variant='contained'
-              size='large'
-              color='primary'
-              fullWidth
-              startIcon={<AimOutlined />}
-              sx={{
-                mt: 2
-              }}
-            >
-              Hire Me
-            </Button>
+            <DownloadCvButton />
           </Box>
         </Grid>
       </Grid>

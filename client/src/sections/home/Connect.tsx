@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
-import { AimOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons'
+import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
@@ -14,14 +14,6 @@ const Connect: React.FC = () => {
       </Box>
 
       <Stack direction='row' flexWrap='wrap' justifyContent='center' gap={2} marginBlock={3}>
-        <Button
-          variant='contained'
-          color='primary'
-          size='large'
-          startIcon={<AimOutlined />}
-        >
-          Hire Me
-        </Button>
 
         <Button
           variant='outlined'
