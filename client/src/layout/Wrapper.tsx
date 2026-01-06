@@ -7,7 +7,7 @@ interface WrapperProps {
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
   return (
-    <Box sx={{ background: theme => theme.palette.background.default, minHeight: '100dvh', py: 3 }}>
+    <Box component='main' sx={{ background: theme => theme.palette.background.default, minHeight: '100dvh', py: 3 }}>
       {children}
     </Box>
   )
