@@ -28,6 +28,7 @@ const Connect: React.FC = () => {
           color='secondary'
           size='large'
           startIcon={<LinkedinOutlined />}
+          onClick={() => window.open(`https://www.linkedin.com/in/darryle-miles-bacay-832032261/`)}
         >
           LinkedIn
         </Button>
@@ -38,6 +39,7 @@ const Connect: React.FC = () => {
           color='secondary'
           size='large'
           startIcon={<GithubOutlined />}
+          onClick={() => window.open(`https://github.com/darrylemiles/`)}
         >
           Github
         </Button>
