@@ -1,10 +1,23 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Stack, Typography } from '@mui/material'
+import { IoGlobeOutline } from 'react-icons/io5'
+import { FlagOutlined, UserOutlined } from '@ant-design/icons'
+import { RiTimeZoneLine } from 'react-icons/ri'
+import { BiBasketball } from 'react-icons/bi'
+import { SiValorant } from 'react-icons/si'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
 import DownloadCvButton from '../../components/DownloadCvButton'
+import Chip from '../../components/Chip'
 
 const AboutMe: React.FC = () => {
+  const date = new Date();
+
+  const year = date.getFullYear();
+  const birthYear = 2003;
+
+  const age = year - birthYear;
+
   return (
     <MainCard>
       <Grid container spacing={2} columns={12}>
@@ -35,6 +48,32 @@ const AboutMe: React.FC = () => {
             <Typography variant='body2' color='primary'>
               I am a full stack web developer.
             </Typography>
+
+            <Stack direction='row' marginBlock={2} flexWrap='wrap'>
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text='Tagalog / English' icon={<IoGlobeOutline />} />
+              </Box>
+
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text='Philippines' icon={<FlagOutlined />} />
+              </Box>
+
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text='UTC+08:00' icon={<RiTimeZoneLine />} />
+              </Box>
+
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text='Basketball' icon={<BiBasketball />} />
+              </Box>
+
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text='Valorant' icon={<SiValorant />} />
+              </Box>
+
+              <Box sx={{ mr: 1, mb: 1 }}>
+                <Chip small text={`${age} y/o`} icon={<UserOutlined />} />
+              </Box>
+            </Stack>
 
             <DownloadCvButton />
           </Box>
