@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           <Grid size={{ xs: 12, md: 4 }}>
             <GithubProfile />
             <Divider />
-            <Contact />
+            {/* <Contact /> */}
           </Grid>
         </Grid>
       </Container>
