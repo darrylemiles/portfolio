@@ -5,7 +5,12 @@ import { LiaHelicopterSolid } from 'react-icons/lia'
 import React from 'react'
 import MainCard from '../../components/MainCard'
 
-const Projects: React.FC = () => {
+
+interface ProjectsProps {
+  onViewAllProjects?: () => void;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ onViewAllProjects }) => {
   return (
     <MainCard
       title={{
@@ -51,6 +56,7 @@ const Projects: React.FC = () => {
           border: `1px solid #1B3B7A`,
           color: `#8EC5FF`
         }}
+        onClick={onViewAllProjects}
       >
         View All Projects
       </Button>

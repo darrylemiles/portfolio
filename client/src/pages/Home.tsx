@@ -1,6 +1,6 @@
 import { Box, Container, Grid } from '@mui/material'
 
-import React from 'react'
+import React, { useRef } from 'react'
 
 // components
 import Divider from '../components/Divider'
@@ -13,8 +13,17 @@ import Tools from '../sections/home/Tools'
 import Projects from '../sections/home/Projects'
 import GithubProfile from '../sections/home/GithubProfile'
 import MarqueCarousel from '../sections/home/MarqueCarousel'
+import ProjectList from '../sections/home/ProjectList'
 
 const Home: React.FC = () => {
+  const projectListRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToProjects = () => {
+    if (projectListRef.current) {
+      projectListRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <React.Fragment>
       <Container>
@@ -22,11 +31,9 @@ const Home: React.FC = () => {
           <Grid size={{ xs: 12, md: 4 }}>
             <AboutMe />
             <Divider />
-
             <Services />
             <Divider />
-
-            <Projects />
+            {/* <Contact /> */}
           </Grid>
 
           <Grid size={{ xs: 12, md: 4 }}>
@@ -38,14 +45,20 @@ const Home: React.FC = () => {
           <Grid size={{ xs: 12, md: 4 }}>
             <GithubProfile />
             <Divider />
-            {/* <Contact /> */}
+            <Projects onViewAllProjects={handleScrollToProjects} />
           </Grid>
         </Grid>
       </Container>
 
-      <Box sx={{ mt: 3 }}>
+      <Box sx={{ my: 15 }}>
         <MarqueCarousel />
       </Box>
+
+      <Container>
+        <div ref={projectListRef}>
+          <ProjectList />
+        </div>
+      </Container>
     </React.Fragment>
   )
 }
