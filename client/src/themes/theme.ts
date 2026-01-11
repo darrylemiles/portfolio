@@ -12,7 +12,7 @@ export const appTheme = createTheme({
     primary: { main: '#4C78FF', dark: '#3956CC', light: '#709EFF' },
     secondary: { main: '#8EB8C8' },
     background: {
-      default: backgroundGradient,
+      default: 'transparent',
       paper: 'rgba(26, 25, 25, 0.95)'
     },
     text: {

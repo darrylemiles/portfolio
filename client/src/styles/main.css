@@ -16,6 +16,15 @@ body,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: radial-gradient(1000px 600px at 70% 10%, rgba(72, 108, 195, 0.35) 0%, rgba(18, 33, 63, 0.0) 60%),
+    radial-gradient(800px 500px at 20% 35%, rgba(121, 74, 196, 0.30) 0%, rgba(18, 33, 63, 0.0) 60%),
+    radial-gradient(600px 400px at 85% 70%, rgba(36, 184, 201, 0.25) 0%, rgba(18, 33, 63, 0.0) 60%),
+    linear-gradient(180deg, #0D1B2A 0%, #0A1623 40%, #0A1826 100%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .text-marquee {
