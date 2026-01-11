@@ -5,6 +5,7 @@ import Wrapper from '../layout/Wrapper';
 
 // pages
 const Home = Loadable(lazy(() => import('../pages/Home')));
+const ProjectDetails = Loadable(lazy(() => import('../pages/ProjectDetails')));
 const NotFound = Loadable(lazy(() => import('../pages/NotFound')));
 const CvViewer = Loadable(lazy(() => import('../pages/CvViewer')));
 
@@ -16,8 +17,17 @@ const PublicRoutes = {
       element: <Wrapper children={<Home />} />
     },
     {
+      path: '/projects',
+      children: [
+        {
+          path: ':title',
+          element: <Wrapper children={<ProjectDetails />} />
+        },
+      ]
+    },
+    {
       path: '/cv',
-      element: <Wrapper hasNavbar children={<CvViewer />} />
+      element: <Wrapper children={<CvViewer />} />
     },
     {
       path: '*',
