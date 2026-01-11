@@ -1,7 +1,7 @@
 [
   {
     "title": "Real Estate Website",
-    "description": "## Overview\n\nProduction-grade real estate platform built with the **MERN** stack (MongoDB, Express, React, Node.js) and **MUI**. Enables buyers to discover properties via fast search, granular filters, and rich detail pages with agent contact workflows.\n\n### Goals\n- Help users find relevant listings quickly with robust search.\n- Provide trustworthy, engaging listing pages with complete details.\n- Improve lead generation via integrated agent contact forms.\n\n### Key Features\n- Faceted search: location, price range, bedrooms, bathrooms, amenities.\n- Sort by relevance, newest, price, and proximity.\n- Mobile-first UI with responsive image galleries and thumbnails.\n- Saved filters and deep-linked, SEO-friendly URLs.\n\n### Architecture\n- React + MUI front-end with route-based code splitting.\n- Express/Node API for listings, agents, and saved searches.\n- MongoDB schemas for `Listing`, `Agent`, and `Inquiry`.\n- Image CDN + lazy loading for fast media delivery.\n\n### Data Model (excerpt)\n- `Listing`: address, geo, price, beds/baths, amenities, photos.\n- `Agent`: profile, contact methods, service area, assigned listings.\n- `Inquiry`: listingId, user message, contact info, status.\n\n### UI/UX\n- Accessible form controls (WCAG AA).\n- Keyboard-friendly gallery; swipe gestures on mobile.\n- Consistent theming via MUI and custom palette.\n\n### SEO\n- Clean slugs, canonical tags, structured data (JSON-LD).\n- Meta tags per listing and city pages.\n\n### Role & Responsibilities\n- Designed schema and API endpoints.\n- Implemented search/filter UX and gallery.\n- Added validation, rate limiting, and request logging.\n\n### Results\n- Median page load: < 1.5s on 4G.\n- 32% increase in qualified inquiries (pilot).\n- Bounce rate improved by 18% after gallery and SEO revisions.\n\n### Future Enhancements\n- Map-based search with clustering.\n- User accounts for saved searches and alerts.\n\n> Users can browse, filter, and contact agents effortlessly.",
+    "description": "## Overview\n\nProduction-grade real estate platform built with the **MERN** stack (MongoDB, Express, React, Node.js) and **MUI**. Enables buyers to discover properties via fast search, granular filters, and rich detail pages with agent contact workflows.\n\n### Goals\n- Help users find relevant listings quickly with robust search.\n- Provide trustworthy, engaging listing pages with complete details.\n- Improve lead generation via integrated agent contact forms.\n\n### Key Features\n- Faceted search: location, price range, bedrooms, bathrooms, amenities.\n- Sort by relevance, newest, price, and proximity.\n- Mobile-first UI with responsive image galleries and thumbnails.\n- Saved filters and deep-linked, SEO-friendly URLs.\n\n### Architecture\n- React + MUI front-end with route-based code splitting.\n- Express/Node API for listings, agents, and saved searches.\n- MongoDB schemas for `Listing`, `Agent`, and `Inquiry`.\n- Image CDN + lazy loading for fast media delivery.\n\n### Role & Responsibilities\n- Designed schema and API endpoints.\n- Implemented search/filter UX and gallery.\n\n### Results\n- Median page load: < 1.5s on 4G.\n- 32% increase in qualified inquiries (pilot).",
     "summary": "MERN real estate platform with fast search, filters, and lead flows.",
     "startDate": "2024-03-01",
     "endDate": "2024-06-30",
@@ -31,7 +31,7 @@
   },
   {
     "title": "Financial Website",
-    "description": "## Overview\n\nMERN-based financial services site with product catalog (loans, savings, investments), interactive calculators, and secure contact flows. Built for accessibility, performance, and easy content management.\n\n### Goals\n- Educate users on products; personalize decisions via calculators.\n- Support referral-based growth with team/downline hierarchies.\n- Keep all interactions secure and compliant.\n\n### Key Features\n- Product pages with comparison tables and FAQs.\n- Loan calculators: monthly payment, amortization charts, APR sensitivity.\n- Referral tracking: uplines/downlines, commission summaries.\n- Contact/eligibility forms with server-side validation.\n\n### Architecture\n- React front-end with chart components for data visualization.\n- Express/Node API for products, referrals, and submissions.\n- MongoDB models: `Product`, `ReferralNode`, `Lead`.\n- Queue for notification emails and audit logs.\n\n### Security\n- Sanitized inputs, validation schemas, and rate limiting.\n- CSRF protection and CORS allowlist.\n- Transport-level TLS; no sensitive data stored in front end.\n\n### Accessibility & Performance\n- Keyboard navigation and ARIA labels; forms readable by screen readers.\n- Code-splitting and image optimization; Lighthouse 90+ targets.\n\n### Role & Responsibilities\n- Implemented calculators and charting.\n- Modeled referral graph with efficient queries.\n- Built secure endpoints and analytics.\n\n### Results\n- Forms completion rate +24% after UX pass.\n- Average TTFB reduced by 28% with caching layer.\n\n### Future Enhancements\n- User portal for application tracking.\n- Scenario planner and budgeting tools.",
+    "description": "## Overview\n\nMERN-based financial services site with product catalog, calculators, and secure contact flows.\n\n### Key Features\n- Loan calculators and amortization charts\n- Referral tracking system\n- Secure forms and validation\n\n### Role & Responsibilities\n- Implemented calculators and charts\n- Built secure endpoints",
     "summary": "Financial SaaS with calculators, referrals, and secure forms.",
     "startDate": "2024-07-01",
     "endDate": "2024-10-15",
@@ -60,9 +60,9 @@
     ]
   },
   {
-    "title": "E Commerce Website",
-    "description": "## Overview\n\nShopify storefront customized with **Liquid**, backed by **Express + MongoDB + Node.js** services for integrations, data sync, and custom endpoints. Focused on fast discovery, smooth cart, and high-converting checkout.\n\n### Goals\n- Scale to thousands of SKUs with fast search.\n- Provide reliable cart and discount logic.\n- Reduce checkout friction across payment providers.\n\n### Key Features\n- Full-text and facet search (collection, tags, price).\n- Persistent cart with discount codes, shipping estimates, taxes.\n- Checkout handoff to Shopify Payments and third parties.\n- Order status pages and email notifications.\n\n### Architecture\n- Shopify Liquid themes for presentation and sections.\n- Express services: inventory sync, discount rules, webhook handlers.\n- MongoDB collections: `Inventory`, `Discount`, `Session`, `Event`.\n- CDN, caching, and code-splitting for performance.\n\n### Performance\n- Image lazy-loading, responsive media, prefetch key routes.\n- Server-side caching of catalog pages; edge caching via CDN.\n\n### Integrations\n- Webhooks: orders/create, carts/update, inventory_levels/update.\n- Analytics events for product views, add-to-cart, checkout.\n\n### Role & Responsibilities\n- Theme customization and componentization.\n- Built discount engine and shipping estimator.\n- Implemented webhook processing and monitoring.\n\n### Results\n- Search response < 200ms (cached).\n- Conversion rate improved with streamlined cart/checkout.\n\n<strong>Outcome:</strong> Faster browsing and higher conversion rates.",
-    "summary": "Shopify + Node services: fast search, robust cart, smooth checkout.",
+    "title": "E-Commerce Website",
+    "description": "## Overview\n\nShopify storefront customized with **Liquid**, supported by **Node.js + Express** services.\n\n### Key Features\n- Fast product search\n- Persistent cart and checkout\n- Webhook integrations\n\n### Role & Responsibilities\n- Theme customization\n- Webhook and discount logic",
+    "summary": "Shopify + Node services with fast checkout and search.",
     "startDate": "2025-01-05",
     "endDate": "2025-04-20",
     "images": [
@@ -87,6 +87,41 @@
       "Express",
       "Shopify",
       "Liquid",
+      "NodeJS"
+    ]
+  },
+  {
+    "title": "Website Reservation System (Capstone Project)",
+    "description": "## Overview\n\nA capstone project focused on developing a **Website Reservation System** for **John Cezar Waterfun Resort**, which currently operates without an online booking platform. The system aims to streamline reservations, improve customer experience, and support the resort’s business operations.\n\n### Goals\n- Provide customers with a convenient online reservation process.\n- Centralize booking management for the business.\n- Reduce manual reservation errors and improve efficiency.\n\n### Key Features\n- Online reservation and scheduling system.\n- Room and facility availability management.\n- Customer information and booking records.\n- Admin dashboard for reservation monitoring.\n\n### Architecture\n- MERN stack (MongoDB, Express, React, Node.js).\n- RESTful API for reservations, users, and availability.\n- Role-based access for customers and business staff.\n\n### Role & Responsibilities\n- Project Manager and Full Stack Developer.\n- System design, database modeling, and API development.\n- UI/UX design using MUI, Figma, and Canva.\n\n###",
+    "summary": "Capstone MERN-based reservation system for a water resort.",
+    "startDate": "2025-07-15",
+    "endDate": "2025-12-08",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/reservation/reserv1",
+        "thumbnail": "../../assets/images/reservation/reserv1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv2",
+        "thumbnail": "../../assets/images/reservation/reserv2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv3",
+        "thumbnail": "../../assets/images/reservation/reserv3"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv4",
+        "thumbnail": "../../assets/images/reservation/reserv4"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
       "NodeJS"
     ]
   }
