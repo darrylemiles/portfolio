@@ -103,7 +103,7 @@ const Details: React.FC = () => {
         <Box sx={{ mb: 4 }}>
           <Button
             startIcon={<ArrowLeftOutlined />}
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}
             sx={{ mb: 2 }}
           >
             Back to Projects

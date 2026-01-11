@@ -1,6 +1,7 @@
 import { Box, Container, Grid } from '@mui/material'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 
 // components
 import Divider from '../components/Divider'
@@ -14,15 +15,26 @@ import Projects from '../sections/home/Projects'
 import GithubProfile from '../sections/home/GithubProfile'
 import MarqueCarousel from '../sections/home/MarqueCarousel'
 import ProjectList from '../sections/home/ProjectList'
+import Contact from '../sections/home/Contact'
 
 const Home: React.FC = () => {
   const projectListRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   const handleScrollToProjects = () => {
     if (projectListRef.current) {
       projectListRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const state = location.state as { scrollTo?: string } | null;
+    if (state?.scrollTo === 'projects' && projectListRef.current) {
+      setTimeout(() => {
+        projectListRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 0);
+    }
+  }, [location.state]);
 
   return (
     <React.Fragment>
@@ -33,7 +45,7 @@ const Home: React.FC = () => {
             <Divider />
             <Services />
             <Divider />
-            {/* <Contact /> */}
+            <Contact />
           </Grid>
 
           <Grid size={{ xs: 12, md: 4 }}>
@@ -55,9 +67,9 @@ const Home: React.FC = () => {
       </Box>
 
       <Container>
-        <div ref={projectListRef}>
+        <Box ref={projectListRef} id="projects">
           <ProjectList />
-        </div>
+        </Box>
       </Container>
     </React.Fragment>
   )

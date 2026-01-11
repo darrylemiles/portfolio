@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import TitleTag from '../../components/TitleTag'
 import ProjectCard from '../../components/ProjectCard'
 import projects from '../../data/projects.json'
@@ -20,9 +20,20 @@ const resolveImage = (basePath: string): string => {
 
 const ProjectList: React.FC = () => {
   const navigate = useNavigate()
+  const projectListRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const state = location.state as { scrollTo?: string } | null;
+    if (state?.scrollTo === 'projects' && projectListRef.current) {
+      setTimeout(() => {
+        projectListRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 0);
+    }
+  }, [location.state]);
 
   return (
-    <Box>
+    <Box ref={projectListRef} id="projects">
       <TitleTag title='My Projects' subtitle='Explore innovative web solutions and applications built with modern frameworks and best practices.' />
 
       <Grid container spacing={2} columns={12}>
