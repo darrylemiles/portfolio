@@ -30,19 +30,27 @@ const ProjectList: React.FC = () => {
         projectListRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, 0);
     }
+
   }, [location.state]);
 
   return (
     <Box ref={projectListRef} id="projects">
-      <TitleTag title='My Projects' subtitle='Explore innovative web solutions and applications built with modern frameworks and best practices.' />
+      <Box data-aos="fade-up">
+        <TitleTag title='My Projects' subtitle='Explore innovative web solutions and applications built with modern frameworks and best practices.' />
+      </Box>
 
       <Grid container spacing={2} columns={12}>
-        {projects?.map((proj) => {
+        {projects?.map((proj, idx) => {
           const thumbnailImage = proj.images.find(img => img.isThumbnail);
           const urlTitle = encodeURIComponent(proj.title.toLowerCase().replace(/\s+/g, '-'));
 
           return (
-            <Grid key={proj.title} size={{ md: 4, xs: 12 }}>
+            <Grid
+              key={proj.title}
+              size={{ md: 4, xs: 12 }}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
+            >
               <ProjectCard
                 title={proj.title}
                 description={proj.summary}

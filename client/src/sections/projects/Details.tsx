@@ -100,7 +100,7 @@ const Details: React.FC = () => {
   return (
     <Container>
       <MainCard>
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 4 }} data-aos="fade-up">
           <Button
             startIcon={<ArrowLeftOutlined />}
             onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}
@@ -154,7 +154,7 @@ const Details: React.FC = () => {
 
         <Grid container spacing={2} sx={{ mb: 4 }}>
           {project.images.map((image, index) => (
-            <Grid key={index} size={{ md: 4, xs: 12 }}>
+            <Grid key={index} size={{ md: 4, xs: 12 }} data-aos="zoom-in" data-aos-delay={index * 100}>
               <Card sx={{ cursor: 'pointer', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.02)' } }}>
                 <CardMedia
                   component="img"
@@ -168,7 +168,7 @@ const Details: React.FC = () => {
           ))}
         </Grid>
 
-        <Box sx={{
+        <Box data-aos="fade-up" sx={{
           '& h2': { color: 'primary.main', mt: 3, mb: 2 },
           '& h3': { color: 'text.primary', mt: 2, mb: 1 },
           '& p': { mb: 2, lineHeight: 1.7 },

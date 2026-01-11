@@ -12,11 +12,19 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 // styles
 import './styles/main.css'
 import './styles/toast.css'
 
 const App: React.FC = () => {
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+
+  }, []);
+
   return (
     <ThemeProvider theme={appTheme}>
       <ToastContainer
