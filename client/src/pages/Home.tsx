@@ -15,7 +15,6 @@ import Projects from '../sections/home/Projects'
 import GithubProfile from '../sections/home/GithubProfile'
 import MarqueCarousel from '../sections/home/MarqueCarousel'
 import ProjectList from '../sections/home/ProjectList'
-import Contact from '../sections/home/Contact'
 
 const Home: React.FC = () => {
   const projectListRef = useRef<HTMLDivElement>(null);
@@ -45,7 +44,7 @@ const Home: React.FC = () => {
             <Divider />
             <Services />
             <Divider />
-            <Contact />
+            {/* <Contact /> */}
           </Grid>
 
           <Grid size={{ xs: 12, md: 4 }}>
