@@ -17,7 +17,7 @@ const PublicRoutes = {
     },
     {
       path: '/cv',
-      element: <Wrapper children={<CvViewer />} />
+      element: <Wrapper hasNavbar children={<CvViewer />} />
     },
     {
       path: '*',
