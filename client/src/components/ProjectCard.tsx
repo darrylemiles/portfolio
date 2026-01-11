@@ -4,10 +4,26 @@ import React from 'react'
 import MainCard from './MainCard'
 import Chip from './Chip'
 
-const ProjectCard: React.FC = () => {
+interface ProjectCardProps {
+  thumbnail: string,
+  title: string,
+  description: string,
+  tags: string[]
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  thumbnail,
+  title,
+  description,
+  tags
+}) => {
   return (
     <MainCard
       sx={{
+        height: '100%',
+        minHeight: '450px',
+        display: 'flex',
+        flexDirection: 'column',
         transition: 'all 0.3s ease-in-out',
         transformOrigin: 'bottom',
         ':hover': {
@@ -19,7 +35,7 @@ const ProjectCard: React.FC = () => {
     >
       <Box
         component='img'
-        src='https://jc-react-portfolio-gold.vercel.app/static/media/President.2e507d06816ab8720e47.png'
+        src={thumbnail}
         sx={{
           width: '100%',
           borderRadius: 5,
@@ -31,17 +47,24 @@ const ProjectCard: React.FC = () => {
       />
 
       <Typography variant='h5' gutterBottom>
-        Digital Document Management System
+        {title}
       </Typography>
 
-      <Typography variant='body2' color="text.secondary" gutterBottom>
-        Full-stack web application with Ollama Ai
+      <Typography variant='body2' color="text.secondary" gutterBottom sx={{
+        flex: 1,
+        overflow: 'hidden',
+        display: '-webkit-box',
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: 'vertical'
+      }}>
+        {description}
       </Typography>
 
       <Stack direction="row" gap={1} flexWrap="wrap" marginBlockStart={3}>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {tags.map((tag) => (
           <Chip
-            text={index % 2 === 0 ? 'React' : 'Node JS'}
+            key={tag}
+            text={tag}
           />
         ))}
       </Stack>
