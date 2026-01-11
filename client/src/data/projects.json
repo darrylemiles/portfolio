@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Real Estate Website",
+    "description": "## Overview\n\nBuilt with the **MERN** stack (MongoDB, Express, React, Node.js) and MUI for a modern, responsive UI. A real estate platform featuring property search, filtering, and detailed listings with agent contact integration.\n\n### Highlights\n- Advanced property search with filters (location, price, beds, amenities)\n- High-quality image galleries and responsive layouts\n- SEO-ready metadata and clean URLs\n\n### Tech Notes\n- MERN + <strong>MUI</strong> for component-driven UI\n- Image carousel with thumbnail preview\n- Optimized assets and lazy loading\n\n> Users can browse, filter, and contact agents effortlessly.",
+    "summary": "MERN real estate platform with filters and agent contact.",
+    "startDate": "2024-03-01",
+    "endDate": "2024-06-30",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/real-estate/real_estate1",
+        "thumbnail": "../../assets/images/real-estate/real_estate1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/real-estate/real_estate2",
+        "thumbnail": "../../assets/images/real-estate/real_estate2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/real-estate/real_estate3",
+        "thumbnail": "../../assets/images/real-estate/real_estate3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
+      "NodeJS"
+    ]
+  },
+  {
+    "title": "Financial Website",
+    "description": "## Overview\n\nBuilt with the **MERN** stack (MongoDB, Express, React, Node.js). A modern financial services site with product pages, calculators, and secure contact flows.\n\n### Features\n- Product catalog for loans, savings, and investments\n- Interactive <em>loan calculators</em> with charts\n- Accessibility and performance focused\n\n### Business Model\n- Includes network-based referral logic (downlines / team hierarchies) for incentives\n\n### Security\n- Sanitized inputs and secure contact endpoints\n\nFor more info, see the <a href=\"#\">project documentation</a>.",
+    "summary": "Financial site with product pages, calculators, and secure contact.",
+    "startDate": "2024-07-01",
+    "endDate": "2024-10-15",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/financial/cfs1",
+        "thumbnail": "../../assets/images/financial/cfs1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/financial/cfs2",
+        "thumbnail": "../../assets/images/financial/cfs2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/financial/cfs3",
+        "thumbnail": "../../assets/images/financial/cfs3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
+      "NodeJS"
+    ]
+  },
+  {
+    "title": "E Commerce Website",
+    "description": "## Overview\n\nStorefront built using **Shopify Liquid** for theming and presentation, with an **Express + MongoDB + Node.js** backend powering integrations, data, and custom endpoints.\n\n### Capabilities\n- Sort, filter, and search across thousands of products\n- Persistent cart with discounts and shipping estimates\n- Streamlined <code>checkout</code> with multiple payment methods\n\n### Performance\n- Code-splitting, image optimization, and caching\n\n<strong>Outcome:</strong> Faster browsing and higher conversion rates.",
+    "summary": "Shopify storefront with fast search, cart, and streamlined checkout.",
+    "startDate": "2025-01-05",
+    "endDate": "2025-04-20",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/e-commerce/ecom_1",
+        "thumbnail": "../../assets/images/e-commerce/ecom_1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/e-commerce/ecom_2",
+        "thumbnail": "../../assets/images/e-commerce/ecom_2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/e-commerce/ecom_3",
+        "thumbnail": "../../assets/images/e-commerce/ecom_3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "Shopify",
+      "Liquid",
+      "NodeJS"
+    ]
+  }
+]
