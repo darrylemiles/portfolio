@@ -11,7 +11,6 @@ import React from 'react'
 import MainCard from '../../components/MainCard'
 import ToolCard from '../../components/ToolCard'
 import { VscAzureDevops } from 'react-icons/vsc'
-import { title } from 'framer-motion/m'
 
 const tools = [
   {
