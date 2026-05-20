@@ -12,7 +12,7 @@ const Services: React.FC = () => {
     'UI/UX Design',
     'SEO Optimization',
     'Database System',
-    'React Application',
+    'SaaS Development',
   ]
 
   return (

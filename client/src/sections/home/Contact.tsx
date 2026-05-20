@@ -9,7 +9,7 @@ import ContactCard from '../../components/ContactCard'
 const Contact: React.FC = () => {
   const handleCopyEmail = () => {
     toast.info('Email copied to clipboard!')
-    navigator.clipboard.writeText('darrylemiles.work@gmail.com')
+    navigator.clipboard.writeText('dmilesbacay@gmail.com')
   }
 
   const handleCopyPhone = () => {
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
       <ContactCard
         icon={<MailOutlined style={{ fontSize: 24, color: `#8EC5FF` }} />}
         label="Email"
-        value="darrylemiles.work@gmail.com"
+        value="dmilesbacay@gmail.com"
         onCopy={handleCopyEmail}
       />
 

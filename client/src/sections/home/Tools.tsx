@@ -4,13 +4,14 @@ import { IoLogoJavascript } from 'react-icons/io5'
 import { DiJira, DiMongodb, DiMysql } from 'react-icons/di'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { BsBootstrap } from 'react-icons/bs'
-import { SiMui, SiPostman } from 'react-icons/si'
+import { SiMui, SiNextdotjs, SiPostman, SiSupabase } from 'react-icons/si'
 import { FiCpu } from 'react-icons/fi'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
 import ToolCard from '../../components/ToolCard'
 import { VscAzureDevops } from 'react-icons/vsc'
+import { title } from 'framer-motion/m'
 
 const tools = [
   {
@@ -68,6 +69,14 @@ const tools = [
   {
     icon: <DiJira size={24} color='#1063CC' />,
     title: 'Jira',
+  },
+  {
+    icon: <SiSupabase size={24} color='#3ECF8E' />,
+    title: 'Supabase',
+  },
+  {
+    icon: <SiNextdotjs size={24} color='#000000' />,
+    title: 'Next JS',
   },
 ]
 
