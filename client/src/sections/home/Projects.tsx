@@ -1,10 +1,10 @@
 import { BranchesOutlined } from '@ant-design/icons'
-import { Box, Button, Stack } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import { LiaHelicopterSolid } from 'react-icons/lia'
 
 import React from 'react'
 import MainCard from '../../components/MainCard'
-
+import Chip from '../../components/Chip'
 
 interface ProjectsProps {
   onViewAllProjects?: () => void;
@@ -17,31 +17,16 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAllProjects }) => {
         text: 'Projects',
         icon: <BranchesOutlined style={{ fontSize: 24, color: `#AB6DE7` }} />
       }}
-      caption='Here are some of the projects I have worked on'
+      caption='Portfolio overview | what I build and how I work'
     >
-      <Stack direction='row' alignItems='center' spacing={2} marginBlock={1}>
+      <Stack direction='column' spacing={2} marginBlock={1}>
         <Box>
-          <Box
-            component='img'
-            src='https://zerochad.github.io/Portfolio-Zero/assets/MGBDashboard-Bzia5j1w.png'
-            sx={{
-              objectFit: 'cover',
-              height: 100,
-              width: '100%'
-            }}
-          />
-        </Box>
-
-        <Box>
-          <Box
-            component='img'
-            src='https://zerochad.github.io/Portfolio-Zero/assets/Capstone-Cb8dC8JI.jpg'
-            sx={{
-              objectFit: 'cover',
-              height: 100,
-              width: '100%'
-            }}
-          />
+          <Typography variant='subtitle2' sx={{ mb: 1 }}>Core technologies</Typography>
+          <Stack direction='row' gap={1} flexWrap='wrap'>
+            {['React', 'TypeScript', 'NodeJS', 'MongoDB', 'SQL', 'MUI', 'Websockets'].map((t) => (
+              <Chip key={t} text={t} small />
+            ))}
+          </Stack>
         </Box>
       </Stack>
 
@@ -49,12 +34,13 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAllProjects }) => {
         fullWidth
         variant='contained'
         size='medium'
-        startIcon={<LiaHelicopterSolid size={32} />}
+        startIcon={<LiaHelicopterSolid size={24} />}
         sx={{
           backgroundColor: '#132040',
           borderRadius: 4,
           border: `1px solid #1B3B7A`,
-          color: `#8EC5FF`
+          color: `#8EC5FF`,
+          mt: 2
         }}
         onClick={onViewAllProjects}
       >
