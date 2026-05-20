@@ -5,6 +5,10 @@ import React from 'react'
 import MainCard from '../../components/MainCard'
 
 const Connect: React.FC = () => {
+  const handleContactClick = () => {
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <MainCard background='#15182A'>
       <Box marginBlock={3}>
@@ -19,6 +23,7 @@ const Connect: React.FC = () => {
           color='primary'
           size='large'
           startIcon={<PhoneOutlined />}
+          onClick={handleContactClick}
         >
           Contact Me
         </Button>

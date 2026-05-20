@@ -16,6 +16,7 @@ import GithubProfile from '../sections/home/GithubProfile'
 import MarqueCarousel from '../sections/home/MarqueCarousel'
 import ProjectList from '../sections/home/ProjectList'
 import Contact from '../sections/home/Contact'
+import ContactForm from '../sections/home/ContactForm'
 
 const Home: React.FC = () => {
   const projectListRef = useRef<HTMLDivElement>(null);
@@ -60,6 +61,10 @@ const Home: React.FC = () => {
             <Projects onViewAllProjects={handleScrollToProjects} />
           </Grid>
         </Grid>
+      </Container>
+
+      <Container>
+        <ContactForm />
       </Container>
 
       <Box sx={{ my: 15 }}>
