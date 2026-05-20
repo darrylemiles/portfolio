@@ -13,7 +13,7 @@ import Connect from '../sections/home/Connect'
 import Tools from '../sections/home/Tools'
 import Projects from '../sections/home/Projects'
 import GithubProfile from '../sections/home/GithubProfile'
-import MarqueCarousel from '../sections/home/MarqueCarousel'
+import MarqueCarousel from '../components/MarqueCarousel'
 import ProjectList from '../sections/home/ProjectList'
 import Contact from '../sections/home/Contact'
 import ContactForm from '../sections/home/ContactForm'
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
       </Container>
 
       <Box sx={{ my: 15 }}>
-        <MarqueCarousel />
+        <MarqueCarousel items={['Information Technology', 'Full Stack Web Developer', 'STI College Dasmarinas']} />
       </Box>
 
       <Container>
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
       </Container>
 
       <Box sx={{ mt: 7.5 }}>
-        <MarqueCarousel />
+        <MarqueCarousel items={['MERN Stack Specialist', 'Healthcare Tech Builder', 'Full Stack Developer', 'API Architect', 'Production Systems']} />
       </Box>
 
       <Container>

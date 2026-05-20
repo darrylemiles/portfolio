@@ -2,12 +2,6 @@ import { Box } from '@mui/material'
 import React from 'react'
 import Marquee from 'react-fast-marquee'
 
-const items = [
-  'Information Technology',
-  'Full Stack Web Developer',
-  'STI College Dasmarinas',
-];
-
 const classes = [
   'marquee-text marquee-text--blue',
   'marquee-text marquee-text--green',
@@ -16,7 +10,7 @@ const classes = [
   'marquee-text marquee-text--red',
 ];
 
-const renderCarousel = () => {
+const renderCarousel = (items: string[]) => {
   return items.map((text, idx) => (
     <Box component='span' key={idx} className={classes[idx % classes.length]} style={{ marginInline: 24 }}>
       {text}
@@ -24,7 +18,7 @@ const renderCarousel = () => {
   ));
 }
 
-const MarqueCarousel: React.FC = () => {
+const MarqueCarousel: React.FC<{ items: string[] }> = ({ items = [] }) => {
 
   return (
     <Box
@@ -33,7 +27,7 @@ const MarqueCarousel: React.FC = () => {
         py: 5,
       }}>
       <Marquee pauseOnHover gradient gradientWidth={60} speed={70} autoFill>
-        {renderCarousel()}
+        {renderCarousel(items)}
       </Marquee>
     </Box>
   )
