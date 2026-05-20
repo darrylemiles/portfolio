@@ -63,10 +63,6 @@ const Home: React.FC = () => {
         </Grid>
       </Container>
 
-      <Container>
-        <ContactForm />
-      </Container>
-
       <Box sx={{ my: 15 }}>
         <MarqueCarousel />
       </Box>
@@ -75,6 +71,14 @@ const Home: React.FC = () => {
         <Box ref={projectListRef} id="projects">
           <ProjectList />
         </Box>
+      </Container>
+
+      <Box sx={{ mt: 7.5 }}>
+        <MarqueCarousel />
+      </Box>
+
+      <Container>
+        <ContactForm />
       </Container>
     </React.Fragment>
   )
