@@ -56,6 +56,7 @@ const ProjectList: React.FC = () => {
                 description={proj.summary}
                 thumbnail={thumbnailImage ? resolveImage(thumbnailImage.thumbnail) : ''}
                 tags={proj.techStack}
+                classification={proj.classification as 'Work' | 'OJT' | 'Capstone'}
                 onClick={() => navigate(`/projects/${urlTitle}`)}
               />
             </Grid>

@@ -27,7 +27,8 @@
       "Express",
       "ReactJS",
       "NodeJS"
-    ]
+    ],
+    "classification": "Work"
   },
   {
     "title": "Financial Website",
@@ -57,7 +58,8 @@
       "Express",
       "ReactJS",
       "NodeJS"
-    ]
+    ],
+    "classification": "Work"
   },
   {
     "title": "E-Commerce Website",
@@ -88,7 +90,49 @@
       "Shopify",
       "Liquid",
       "NodeJS"
-    ]
+    ],
+    "classification": "Work"
+  },
+  {
+    "title": "Patient Referral Network Platform",
+    "description": "## Overview\n\nA healthcare technology platform built with **MERN** stack that streamlines patient referrals between clinics and healthcare providers. The system enables seamless communication, referral tracking, and secure patient data management across a network of medical facilities.\n\n### Goals\n- Simplify patient referral workflows between healthcare providers.\n- Reduce referral processing time and administrative overhead.\n- Ensure secure, HIPAA-compliant patient data management.\n- Provide real-time visibility into referral status and outcomes.\n\n### Key Features\n- **Referral Management**: Create, track, and manage patient referrals in real-time.\n- **Clinic Directory**: Searchable directory of participating clinics and specialists.\n- **Patient Dashboard**: Secure portal for patients to view referrals and appointments.\n- **Provider Dashboard**: Comprehensive view of incoming/outgoing referrals.\n- **Referral Agreements**: Digital agreement management between participating facilities.\n- **Status Tracking**: Real-time updates on referral progress and approvals.\n- **Secure Messaging**: HIPAA-compliant communication between providers.\n\n### Architecture\n- React front-end with role-based access control (RBAC).\n- Express/Node API with healthcare data security protocols.\n- MongoDB for patient records, referrals, and clinic data.\n- JWT authentication and encryption for sensitive data.\n\n### Role & Responsibilities\n- **Full Stack Development**: Built end-to-end features including dashboards and referral workflows.\n- **DevOps & CI/CD**: Architected and managed automated deployment pipelines using GitHub Actions.\n- **Monitoring & Logging**: Implemented comprehensive monitoring, alerting, and centralized logging for production systems.\n- **Security & Compliance**: Ensured HIPAA compliance, data encryption, and security best practices.\n\n### Results\n- Reduced referral processing time by 65%.\n- Achieved 99.95% system uptime with automated failover.\n- Deployed 50+ releases per month with zero-downtime deployments.\n- Supported 200+ healthcare facilities and 500K+ patient records.",
+    "summary": "Healthcare referral network with full stack dev and DevOps management.",
+    "startDate": "2026-01-15",
+    "endDate": "2026-04-20",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/patient-referring-platform/dashboard",
+        "thumbnail": "../../assets/images/patient-referring-platform/dashboard"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/referrals",
+        "thumbnail": "../../assets/images/patient-referring-platform/referrals"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/clinics",
+        "thumbnail": "../../assets/images/patient-referring-platform/clinics"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/agreed",
+        "thumbnail": "../../assets/images/patient-referring-platform/agreed"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/login",
+        "thumbnail": "../../assets/images/patient-referring-platform/login"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactTS",
+      "NodeJS"
+    ],
+    "classification": "Work"
   },
   {
     "title": "Website Reservation System (Capstone Project)",
@@ -123,7 +167,8 @@
       "Express",
       "ReactJS",
       "NodeJS"
-    ]
+    ],
+    "classification": "Capstone"
   },
   {
     "title": "Multi-Tenant SaaS Platform (Live Chat)",
@@ -166,49 +211,10 @@
     "techStack": [
       "MongoDB",
       "Express",
-      "ReactJS",
+      "ReactTS",
       "NodeJS",
       "Websockets"
-    ]
-  },
-  {
-    "title": "Patient Referral Network Platform",
-    "description": "## Overview\n\nA healthcare technology platform built with **MERN** stack that streamlines patient referrals between clinics and healthcare providers. The system enables seamless communication, referral tracking, and secure patient data management across a network of medical facilities.\n\n### Goals\n- Simplify patient referral workflows between healthcare providers.\n- Reduce referral processing time and administrative overhead.\n- Ensure secure, HIPAA-compliant patient data management.\n- Provide real-time visibility into referral status and outcomes.\n\n### Key Features\n- **Referral Management**: Create, track, and manage patient referrals in real-time.\n- **Clinic Directory**: Searchable directory of participating clinics and specialists.\n- **Patient Dashboard**: Secure portal for patients to view referrals and appointments.\n- **Provider Dashboard**: Comprehensive view of incoming/outgoing referrals.\n- **Referral Agreements**: Digital agreement management between participating facilities.\n- **Status Tracking**: Real-time updates on referral progress and approvals.\n- **Secure Messaging**: HIPAA-compliant communication between providers.\n\n### Architecture\n- React front-end with role-based access control (RBAC).\n- Express/Node API with healthcare data security protocols.\n- MongoDB for patient records, referrals, and clinic data.\n- JWT authentication and encryption for sensitive data.\n\n### Role & Responsibilities\n- **Full Stack Development**: Built end-to-end features including dashboards and referral workflows.\n- **DevOps & CI/CD**: Architected and managed automated deployment pipelines using GitHub Actions.\n- **Monitoring & Logging**: Implemented comprehensive monitoring, alerting, and centralized logging for production systems.\n- **Security & Compliance**: Ensured HIPAA compliance, data encryption, and security best practices.\n\n### Results\n- Reduced referral processing time by 65%.\n- Achieved 99.95% system uptime with automated failover.\n- Deployed 50+ releases per month with zero-downtime deployments.\n- Supported 200+ healthcare facilities and 500K+ patient records.",
-    "summary": "Healthcare referral network with full stack dev and DevOps management.",
-    "startDate": "2026-01-15",
-    "endDate": "2026-04-20",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/patient-referring-platform/dashboard",
-        "thumbnail": "../../assets/images/patient-referring-platform/dashboard"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/referrals",
-        "thumbnail": "../../assets/images/patient-referring-platform/referrals"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/clinics",
-        "thumbnail": "../../assets/images/patient-referring-platform/clinics"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/agreed",
-        "thumbnail": "../../assets/images/patient-referring-platform/agreed"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/login",
-        "thumbnail": "../../assets/images/patient-referring-platform/login"
-      }
     ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "ReactTS",
-      "NodeJS"
-    ]
+    "classification": "OJT"
   }
 ]
