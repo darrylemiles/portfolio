@@ -3,7 +3,7 @@ import { FaDownload, FaExternalLinkAlt, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 import React from 'react';
-import cvPdf from '../assets/Darryle Miles CV.pdf';
+import cvPdf from '../assets/Darryle_Bacay_CV.pdf';
 import TitleTag from '../components/TitleTag';
 
 const CvViewer: React.FC = () => {
@@ -11,7 +11,7 @@ const CvViewer: React.FC = () => {
   const downloadCv = () => {
     const a = document.createElement('a');
     a.href = cvPdf;
-    a.download = 'Darryle Miles CV.pdf';
+    a.download = 'Darryle_Bacay_CV.pdf';
     a.click();
   };
 
