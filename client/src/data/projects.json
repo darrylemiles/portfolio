@@ -129,8 +129,8 @@
     "title": "Multi-Tenant SaaS Platform (Live Chat)",
     "description": "## Overview\n\nProduction-grade multi-tenant SaaS platform providing real-time live chat solutions with a **MERN** stack (MongoDB, Express, React, Node.js) and **Socket.io** for real-time communication. The platform includes both a customer-facing chat widget and a comprehensive admin portal for conversation management.\n\n### Goals\n- Enable businesses to communicate with customers in real-time.\n- Provide intuitive chat management tools for support teams.\n- Support multiple tenants with complete data isolation and custom branding.\n- Deliver scalable, low-latency messaging infrastructure.\n\n### Key Features\n- **Live Chat Widget**: Customizable, embeddable chat widget for websites.\n- **Agent Portal**: Dashboard for managing conversations, queues, and chat history.\n- **Queue Management**: Intelligent routing and queue monitoring for incoming chats.\n- **Chat History**: Persistent conversation storage with search and filtering.\n- **Multi-Tenant Architecture**: Secure data isolation across multiple clients.\n- **Real-Time Notifications**: Instant updates for agents and customers using WebSockets.\n- **Admin Dashboard**: Tenant metrics, analytics, and configuration management.\n\n### Architecture\n- React + Socket.io front-end with real-time state synchronization.\n- Express/Node API with tenant middleware for multi-tenancy.\n- MongoDB schemas for `Conversation`, `Message`, `Agent`, and `Tenant`.\n- WebSocket server for real-time bidirectional communication.\n- Redis for message queuing and session management.\n\n### Role & Responsibilities\n- **Project Architect**: Designed multi-tenant system architecture and data models.\n- **Team Lead**: Led development, code reviews, and technical decision-making.\n- **Core Developer**: Implemented real-time messaging engine, widget, and admin portal.\n- **Performance Optimization**: Optimized WebSocket connections and database queries.\n\n### Results\n- Sub-100ms message latency across the globe.\n- Supported 50K+ concurrent users during pilot.\n- 99.8% uptime SLA achieved in production.\n- 40% reduction in support response time for adopting businesses.",
     "summary": "Multi-tenant MERN SaaS with real-time live chat widget and management portal.",
-    "startDate": "2025-04-21",
-    "endDate": "2026-05-20",
+    "startDate": "2025-03-16",
+    "endDate": "2026-05-13",
     "images": [
       {
         "isThumbnail": true,
@@ -169,6 +169,46 @@
       "ReactJS",
       "NodeJS",
       "Websockets"
+    ]
+  },
+  {
+    "title": "Patient Referral Network Platform",
+    "description": "## Overview\n\nA healthcare technology platform built with **MERN** stack that streamlines patient referrals between clinics and healthcare providers. The system enables seamless communication, referral tracking, and secure patient data management across a network of medical facilities.\n\n### Goals\n- Simplify patient referral workflows between healthcare providers.\n- Reduce referral processing time and administrative overhead.\n- Ensure secure, HIPAA-compliant patient data management.\n- Provide real-time visibility into referral status and outcomes.\n\n### Key Features\n- **Referral Management**: Create, track, and manage patient referrals in real-time.\n- **Clinic Directory**: Searchable directory of participating clinics and specialists.\n- **Patient Dashboard**: Secure portal for patients to view referrals and appointments.\n- **Provider Dashboard**: Comprehensive view of incoming/outgoing referrals.\n- **Referral Agreements**: Digital agreement management between participating facilities.\n- **Status Tracking**: Real-time updates on referral progress and approvals.\n- **Secure Messaging**: HIPAA-compliant communication between providers.\n\n### Architecture\n- React front-end with role-based access control (RBAC).\n- Express/Node API with healthcare data security protocols.\n- MongoDB for patient records, referrals, and clinic data.\n- JWT authentication and encryption for sensitive data.\n\n### Role & Responsibilities\n- **Full Stack Development**: Built end-to-end features including dashboards and referral workflows.\n- **DevOps & CI/CD**: Architected and managed automated deployment pipelines using GitHub Actions.\n- **Monitoring & Logging**: Implemented comprehensive monitoring, alerting, and centralized logging for production systems.\n- **Security & Compliance**: Ensured HIPAA compliance, data encryption, and security best practices.\n\n### Results\n- Reduced referral processing time by 65%.\n- Achieved 99.95% system uptime with automated failover.\n- Deployed 50+ releases per month with zero-downtime deployments.\n- Supported 200+ healthcare facilities and 500K+ patient records.",
+    "summary": "Healthcare referral network with full stack dev and DevOps management.",
+    "startDate": "2026-01-15",
+    "endDate": "2026-04-20",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/patient-referring-platform/dashboard",
+        "thumbnail": "../../assets/images/patient-referring-platform/dashboard"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/referrals",
+        "thumbnail": "../../assets/images/patient-referring-platform/referrals"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/clinics",
+        "thumbnail": "../../assets/images/patient-referring-platform/clinics"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/agreed",
+        "thumbnail": "../../assets/images/patient-referring-platform/agreed"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/login",
+        "thumbnail": "../../assets/images/patient-referring-platform/login"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactTS",
+      "NodeJS"
     ]
   }
 ]
