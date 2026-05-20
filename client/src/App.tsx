@@ -25,6 +25,25 @@ const App: React.FC = () => {
 
   }, []);
 
+  React.useEffect(() => {
+    const url = new URL(window.location.href);
+
+    const trackingParams = [
+      "brid",
+      "fbclid",
+      "gclid",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+    ];
+
+    trackingParams.forEach((param) => {
+      url.searchParams.delete(param);
+    });
+
+    window.history.replaceState({}, "", url.pathname);
+  }, []);
+
   return (
     <ThemeProvider theme={appTheme}>
       <ToastContainer
