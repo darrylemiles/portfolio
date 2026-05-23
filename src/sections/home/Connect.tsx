@@ -10,7 +10,7 @@ const Connect: React.FC = () => {
   }
 
   return (
-    <MainCard background='#15182A'>
+    <MainCard background='inherit'>
       <Box marginBlock={3}>
         <Typography variant='h2' fontSize={50} textAlign='center' marginBottom={2}> 👥 </Typography>
         <Typography variant='h5' textAlign='center' marginBottom={2}> Let's Build Something Great Together </Typography>

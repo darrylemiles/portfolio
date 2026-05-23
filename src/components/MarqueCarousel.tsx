@@ -22,10 +22,10 @@ const MarqueCarousel: React.FC<{ items: string[] }> = ({ items = [] }) => {
 
   return (
     <Box
-      sx={{
-        bgcolor: '#0a0e1a',
+      sx={theme => ({
+        bgcolor: theme.palette.mode === 'light' ? theme.palette.background.paper : '#0a0e1a',
         py: 5,
-      }}>
+      })}>
       <Marquee pauseOnHover gradient gradientWidth={60} speed={70} autoFill>
         {renderCarousel(items)}
       </Marquee>

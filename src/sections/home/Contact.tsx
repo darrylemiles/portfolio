@@ -26,14 +26,14 @@ const Contact: React.FC = () => {
       caption='Feel free to reach out to me anytime'
     >
       <ContactCard
-        icon={<MailOutlined style={{ fontSize: 24, color: `#8EC5FF` }} />}
+        icon={<MailOutlined style={{ fontSize: 24, color: 'inherit' }} />}
         label="Email"
         value="dmilesbacay@gmail.com"
         onCopy={handleCopyEmail}
       />
 
       <ContactCard
-        icon={<PhoneOutlined style={{ fontSize: 24, color: `#8EC5FF` }} />}
+        icon={<PhoneOutlined style={{ fontSize: 24, color: 'inherit' }} />}
         label="Phone"
         value="+63 961 995 7794"
         onCopy={handleCopyPhone}

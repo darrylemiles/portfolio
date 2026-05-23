@@ -11,9 +11,9 @@ const Chip: React.FC<ChipProps> = ({ text, icon, small = false }) => {
   return (
     <Box
       sx={theme => ({
-        background: `#151B2A`,
-        color: theme.palette.secondary.main,
-        border: '1px solid #1A2E56',
+        background: theme.palette.mode === 'light' ? theme.palette.background.default : '#151B2A',
+        color: theme.palette.text.primary,
+        border: `1px solid ${theme.palette.divider}`,
         borderRadius: 2,
         px: 2,
         py: small ? 0.25 : 0.5,
@@ -46,7 +46,7 @@ const Chip: React.FC<ChipProps> = ({ text, icon, small = false }) => {
           {icon}
         </Box>
       )}
-      <Typography variant='body2' sx={{ fontSize: small ? '0.67rem' : '0.875rem' }}>
+      <Typography variant='body2' color="inherit" sx={{ fontSize: small ? '0.67rem' : '0.875rem' }}>
         {text}
       </Typography>
     </Box>

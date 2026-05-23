@@ -49,7 +49,7 @@ const AboutMe: React.FC = () => {
               Darryle Miles Bacay
             </Typography>
 
-            <Typography variant='body2' color='primary'>
+            <Typography variant='body2' color='text.secondary'>
               I am a full stack web developer.
             </Typography>
 

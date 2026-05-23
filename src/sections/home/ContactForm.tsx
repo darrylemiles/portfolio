@@ -92,17 +92,20 @@ const ContactForm: React.FC = () => {
       }}
     >
       <Box
-        sx={{
+        sx={theme => ({
           mx: 'auto',
           p: { xs: 2.5, md: 4 },
           borderRadius: 4,
-          border: '1px solid rgba(142, 197, 255, 0.18)',
-          background: 'linear-gradient(180deg, rgba(14, 18, 30, 0.95) 0%, rgba(10, 13, 22, 0.98) 100%)',
-          boxShadow: '0 24px 60px rgba(0, 0, 0, 0.32)',
-        }}
+          border: `1px solid ${theme.palette.divider}`,
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          boxShadow: theme.palette.mode === 'light'
+            ? '0 20px 48px rgba(15, 23, 42, 0.08)'
+            : '0 24px 60px rgba(0, 0, 0, 0.32)',
+        })}
       >
         <Stack spacing={1.25} mb={3}>
-          <Typography variant='overline' color='secondary'>Contact Me</Typography>
+          <Typography variant='overline' color='text.secondary'>Contact Me</Typography>
           <Typography variant='h4' component='h2'>Let's talk about your next project</Typography>
           <Typography variant='body2' color='text.secondary'>
             Send a quick message and I will get back to you as soon as possible.
@@ -118,6 +121,26 @@ const ContactForm: React.FC = () => {
               fullWidth
               autoComplete='name'
               disabled={isSending}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  color: 'text.primary',
+                  '& fieldset': {
+                    borderColor: 'divider',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: 'primary.main',
+                },
+              }}
             />
 
             <TextField
@@ -128,6 +151,26 @@ const ContactForm: React.FC = () => {
               fullWidth
               autoComplete='email'
               disabled={isSending}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  color: 'text.primary',
+                  '& fieldset': {
+                    borderColor: 'divider',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: 'primary.main',
+                },
+              }}
             />
 
             <TextField
@@ -138,6 +181,26 @@ const ContactForm: React.FC = () => {
               multiline
               minRows={6}
               disabled={isSending}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  color: 'text.primary',
+                  '& fieldset': {
+                    borderColor: 'divider',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'primary.main',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: 'primary.main',
+                },
+              }}
             />
 
             <Box>
@@ -153,7 +216,11 @@ const ContactForm: React.FC = () => {
               variant='contained'
               size='large'
               disabled={isSending || !recaptchaToken}
-              sx={{ alignSelf: 'flex-start', minWidth: 180 }}
+              sx={theme => ({
+                alignSelf: 'flex-start',
+                minWidth: 180,
+                color: theme.palette.mode === 'light' ? '#FFFFFF' : 'inherit',
+              })}
             >
               {isSending ? 'Sending...' : 'Send Message'}
             </Button>

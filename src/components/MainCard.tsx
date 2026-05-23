@@ -17,10 +17,13 @@ const MainCard: React.FC<MainCardProps> = ({ children, title, background, captio
     <Box
       sx={{
         background: theme => background || theme.palette.background.paper,
-        border: '1px solid rgba(255, 255, 255, .08)',
+        border: theme => `1px solid ${theme.palette.divider}`,
         borderRadius: 2.5,
         p: 3,
-        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+        boxShadow: theme => theme.palette.mode === 'light'
+          ? '0 8px 24px rgba(15, 23, 42, 0.08)'
+          : '0 4px 16px rgba(0, 0, 0, 0.4)',
+        color: theme => theme.palette.text.primary,
         width: '100%',
         ...sx
       }}
@@ -30,7 +33,7 @@ const MainCard: React.FC<MainCardProps> = ({ children, title, background, captio
           <Stack direction="row" alignItems="center" spacing={2} mb={2}>
             {title.icon}
 
-            <Typography variant='h5'>
+            <Typography variant='h5' color="inherit">
               {title.text}
             </Typography>
           </Stack>

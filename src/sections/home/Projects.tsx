@@ -35,13 +35,13 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAllProjects }) => {
         variant='contained'
         size='medium'
         startIcon={<LiaHelicopterSolid size={24} />}
-        sx={{
-          backgroundColor: '#132040',
+        sx={theme => ({
+          backgroundColor: theme.palette.mode === 'light' ? theme.palette.primary.main : '#132040',
           borderRadius: 4,
-          border: `1px solid #1B3B7A`,
-          color: `#8EC5FF`,
+          border: `1px solid ${theme.palette.primary.dark}`,
+          color: theme.palette.mode === 'light' ? '#FFFFFF' : '#8EC5FF',
           mt: 2
-        }}
+        })}
         onClick={onViewAllProjects}
       >
         View All Projects

@@ -12,17 +12,18 @@ const ToolCard: React.FC<ToolCardProps> = ({ icon, title }) => {
       spacing={2}
       direction='row'
       alignItems='center'
-      sx={{
+      sx={theme => ({
         borderRadius: 3,
-        background: `#171C27`,
+        background: theme.palette.mode === 'light' ? theme.palette.background.default : '#171C27',
+        color: theme.palette.text.primary,
         p: 1,
-        border: '1px solid #222831',
+        border: `1px solid ${theme.palette.divider}`,
         transition: 'all 0.3s ease-in-out',
         position: 'relative',
         overflow: 'hidden',
         '&:hover': {
-          background: '#1E2530',
-          border: '1px solid #3956CC',
+          background: theme.palette.mode === 'light' ? theme.palette.background.paper : '#1E2530',
+          border: `1px solid ${theme.palette.primary.main}`,
           transform: 'translateY(-2px) rotate(5deg)',
           boxShadow: '0 4px 12px rgba(57, 86, 204, 0.2)',
           '&::before': {
@@ -42,10 +43,10 @@ const ToolCard: React.FC<ToolCardProps> = ({ icon, title }) => {
             pointerEvents: 'none',
           }
         }
-      }}
+      })}
     >
       <React.Fragment>{icon}</React.Fragment>
-      <Typography variant='body1'> {title} </Typography>
+      <Typography variant='body1' color="inherit"> {title} </Typography>
     </Stack >
   )
 }
