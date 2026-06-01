@@ -23,8 +23,8 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAllProjects }) => {
         <Box>
           <Typography variant='subtitle2' sx={{ mb: 1 }}>Core technologies</Typography>
           <Stack direction='row' gap={1} flexWrap='wrap'>
-            {['React', 'TypeScript', 'NodeJS', 'MongoDB', 'SQL', 'MUI', 'Websockets'].map((t) => (
-              <Chip key={t} text={t} small />
+            {['React', 'TypeScript', 'NodeJS', 'MongoDB', 'SQL', 'MUI', 'Websockets', 'Microservices'].map((t) => (
+              <Chip key={t} text={t} />
             ))}
           </Stack>
         </Box>
