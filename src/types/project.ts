@@ -28,3 +28,8 @@ export interface ProjectViewModel extends Project {
   thumbnailSrc: string;
   imageSources: string[];
 }
+
+export interface ProjectGroup {
+  classification: string;
+  projects: ProjectViewModel[];
+}

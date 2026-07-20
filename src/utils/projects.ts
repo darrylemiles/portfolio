@@ -1,5 +1,5 @@
 import projectsJson from '../data/projects.json'
-import type { Project, ProjectViewModel } from '../types/project'
+import type { Project, ProjectGroup, ProjectViewModel } from '../types/project'
 
 const assetModules = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,webp,gif,svg}', {
   eager: true,
@@ -54,3 +54,19 @@ export const getProjects = (): ProjectViewModel[] =>
 
 export const getProjectBySlug = (slug = '') =>
   getProjects().find((project) => project.slug === decodeURIComponent(slug).toLowerCase())
+
+export const groupProjectsByClassification = (projectList: ProjectViewModel[]): ProjectGroup[] => {
+  const groups = new Map<string, ProjectViewModel[]>()
+
+  projectList.forEach((project) => {
+    const classification = project.classification || 'Other'
+    const existingProjects = groups.get(classification) ?? []
+
+    groups.set(classification, [...existingProjects, project])
+  })
+
+  return Array.from(groups, ([classification, groupedProjects]) => ({
+    classification,
+    projects: groupedProjects,
+  }))
+}

@@ -1,15 +1,16 @@
-import { Box } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import React, { useEffect, useMemo, useRef } from 'react'
 import ProjectCard from '../../components/ProjectCard'
-import { getProjects } from '../../utils/projects'
+import { getProjects, groupProjectsByClassification } from '../../utils/projects'
 
 const ProjectList: React.FC = () => {
   const navigate = useNavigate()
   const projectListRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
   const projects = useMemo(() => getProjects(), [])
+  const projectGroups = useMemo(() => groupProjectsByClassification(projects), [projects])
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string } | null
@@ -22,14 +23,39 @@ const ProjectList: React.FC = () => {
 
   return (
     <Box ref={projectListRef} id="projects">
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={project.slug}
-          project={project}
-          index={index}
-          onOpen={(slug) => navigate(`/projects/${slug}`)}
-        />
-      ))}
+      <Stack spacing={{ xs: 6, md: 9 }}>
+        {projectGroups.map((group) => (
+          <Box key={group.classification}>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              justifyContent="space-between"
+              alignItems={{ xs: 'flex-start', md: 'flex-end' }}
+              gap={1.5}
+              sx={{ pb: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}
+            >
+              <Typography variant="h3" component="h3">
+                {group.classification}
+              </Typography>
+              <Typography variant="overline" color="primary" sx={{ fontWeight: 800, letterSpacing: '0.14em' }}>
+                {group.projects.length} {group.projects.length === 1 ? 'Project' : 'Projects'}
+              </Typography>
+            </Stack>
+
+            {group.projects.map((project, groupIndex) => {
+              const globalIndex = projects.findIndex((item) => item.slug === project.slug)
+
+              return (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  index={globalIndex >= 0 ? globalIndex : groupIndex}
+                  onOpen={(slug) => navigate(`/projects/${slug}`)}
+                />
+              )
+            })}
+          </Box>
+        ))}
+      </Stack>
     </Box>
   )
 }
