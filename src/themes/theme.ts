@@ -4,31 +4,32 @@ import typography from './typography';
 
 const getBackground = (mode: PaletteMode) => {
   if (mode === 'light') {
-    return `radial-gradient(1000px 600px at 70% 10%, rgba(76, 120, 255, 0.16) 0%, rgba(245, 247, 255, 0) 60%),
-      radial-gradient(800px 500px at 20% 35%, rgba(99, 102, 241, 0.12) 0%, rgba(245, 247, 255, 0) 60%),
-      radial-gradient(600px 400px at 85% 70%, rgba(14, 165, 233, 0.10) 0%, rgba(245, 247, 255, 0) 60%),
-      linear-gradient(180deg, #F8FAFF 0%, #EEF4FF 45%, #EAF0F8 100%)`;
+    return `linear-gradient(135deg, rgba(232, 220, 200, 0.72) 0%, rgba(246, 241, 231, 0) 34%),
+      linear-gradient(180deg, #F7F2E8 0%, #F3EEE4 46%, #E9EEE5 100%)`;
   }
 
-  return `radial-gradient(1000px 600px at 70% 10%, rgba(72, 108, 195, 0.35) 0%, rgba(18, 33, 63, 0.0) 60%),
-    radial-gradient(800px 500px at 20% 35%, rgba(121, 74, 196, 0.30) 0%, rgba(18, 33, 63, 0.0) 60%),
-    radial-gradient(600px 400px at 85% 70%, rgba(36, 184, 201, 0.25) 0%, rgba(18, 33, 63, 0.0) 60%),
-    linear-gradient(180deg, #0D1B2A 0%, #0A1623 40%, #0A1826 100%)`;
+  return `linear-gradient(135deg, rgba(58, 82, 74, 0.42) 0%, rgba(14, 16, 15, 0) 36%),
+    linear-gradient(180deg, #151613 0%, #0F120F 46%, #121812 100%)`;
 };
 
 export const createAppTheme = (mode: PaletteMode) => createTheme({
   palette: {
     mode,
-    primary: { main: '#4C78FF', dark: '#3956CC', light: '#709EFF' },
-    secondary: { main: mode === 'light' ? '#4B5563' : '#8EB8C8' },
+    primary: { main: '#B85C47', dark: '#8E3F31', light: '#D8836D' },
+    secondary: { main: mode === 'light' ? '#32675E' : '#9BC7BA' },
     background: {
       default: getBackground(mode),
-      paper: mode === 'light' ? 'rgba(255, 255, 255, 0.86)' : 'rgba(18, 25, 38, 0.90)'
+      paper: mode === 'light' ? 'rgba(255, 252, 245, 0.90)' : 'rgba(26, 29, 25, 0.92)'
     },
     text: {
-      primary: mode === 'light' ? '#0F172A' : '#E6F0FF',
-      secondary: mode === 'light' ? '#4B5563' : '#A9B7D0'
-    }
+      primary: mode === 'light' ? '#1C1E19' : '#F5F1E8',
+      secondary: mode === 'light' ? '#5C6256' : '#C7C1B6'
+    },
+    divider: mode === 'light' ? 'rgba(50, 58, 45, 0.16)' : 'rgba(245, 241, 232, 0.14)',
+    action: {
+      hover: mode === 'light' ? 'rgba(184, 92, 71, 0.08)' : 'rgba(216, 131, 109, 0.12)',
+      selected: mode === 'light' ? 'rgba(50, 103, 94, 0.12)' : 'rgba(155, 199, 186, 0.14)',
+    },
   },
   shape: {
     borderRadius: 3,
@@ -37,7 +38,15 @@ export const createAppTheme = (mode: PaletteMode) => createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 15,
+          borderRadius: 4,
+          boxShadow: 'none',
+          transition: 'transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease',
+          '&:hover': {
+            transform: 'translateY(-1px)',
+            boxShadow: mode === 'light'
+              ? '0 12px 28px rgba(28, 30, 25, 0.12)'
+              : '0 12px 32px rgba(0, 0, 0, 0.32)',
+          },
         },
       },
     },
