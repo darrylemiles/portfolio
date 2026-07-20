@@ -1,178 +1,4 @@
-
 [
-  {
-    "title": "Real Estate Website",
-    "description": "## Overview\n\nProduction-grade real estate platform built with the **MERN** stack (MongoDB, Express, React, Node.js) and **MUI**. Enables buyers to discover properties via fast search, granular filters, and rich detail pages with agent contact workflows.\n\n### Goals\n- Help users find relevant listings quickly with robust search.\n- Provide trustworthy, engaging listing pages with complete details.\n- Improve lead generation via integrated agent contact forms.\n\n### Key Features\n- Faceted search: location, price range, bedrooms, bathrooms, amenities.\n- Sort by relevance, newest, price, and proximity.\n- Mobile-first UI with responsive image galleries and thumbnails.\n- Saved filters and deep-linked, SEO-friendly URLs.\n\n### Architecture\n- React + MUI front-end with route-based code splitting.\n- Express/Node API for listings, agents, and saved searches.\n- MongoDB schemas for `Listing`, `Agent`, and `Inquiry`.\n- Image CDN + lazy loading for fast media delivery.\n\n### Role & Responsibilities\n- Designed schema and API endpoints.\n- Implemented search/filter UX and gallery.",
-    "summary": "MERN real estate platform with fast search, filters, and lead flows.",
-    "startDate": "2024-03-01",
-    "endDate": "2024-06-30",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/real-estate/real_estate1",
-        "thumbnail": "../../assets/images/real-estate/real_estate1"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/real-estate/real_estate2",
-        "thumbnail": "../../assets/images/real-estate/real_estate2"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/real-estate/real_estate3",
-        "thumbnail": "../../assets/images/real-estate/real_estate3"
-      }
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "ReactJS",
-      "NodeJS",
-      "Microservices"
-    ],
-    "classification": "Work"
-  },
-  {
-    "title": "Financial Website",
-    "description": "## Overview\n\nMERN-based financial services site with product catalog, calculators, and secure contact flows.\n\n### Key Features\n- Loan calculators and amortization charts\n- Referral tracking system\n- Secure forms and validation\n\n### Role & Responsibilities\n- Implemented calculators and charts\n- Built secure endpoints",
-    "summary": "Financial SaaS with calculators, referrals, and secure forms.",
-    "startDate": "2024-07-01",
-    "endDate": "2024-10-15",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/financial/cfs1",
-        "thumbnail": "../../assets/images/financial/cfs1"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/financial/cfs2",
-        "thumbnail": "../../assets/images/financial/cfs2"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/financial/cfs3",
-        "thumbnail": "../../assets/images/financial/cfs3"
-      }
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "ReactJS",
-      "NodeJS",
-      "Microservices"
-    ],
-    "classification": "Work"
-  },
-  {
-    "title": "E-Commerce Website",
-    "description": "## Overview\n\nShopify storefront customized with **Liquid**, supported by **Node.js + Express** services.\n\n### Key Features\n- Fast product search\n- Persistent cart and checkout\n- Webhook integrations\n\n### Role & Responsibilities\n- Theme customization\n- Webhook and discount logic",
-    "summary": "Shopify + Node services with fast checkout and search.",
-    "startDate": "2025-01-05",
-    "endDate": "2025-04-20",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/e-commerce/ecom_1",
-        "thumbnail": "../../assets/images/e-commerce/ecom_1"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/e-commerce/ecom_2",
-        "thumbnail": "../../assets/images/e-commerce/ecom_2"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/e-commerce/ecom_3",
-        "thumbnail": "../../assets/images/e-commerce/ecom_3"
-      }
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "Shopify",
-      "Liquid",
-      "NodeJS"
-    ],
-    "classification": "Work"
-  },
-  {
-    "title": "Patient Referral Network Platform",
-    "description": "## Overview\n\nA healthcare technology platform built with **MERN** stack that streamlines patient referrals between clinics and healthcare providers. The system enables seamless communication, referral tracking, and secure patient data management across a network of medical facilities.\n\n### Goals\n- Simplify patient referral workflows between healthcare providers.\n- Reduce referral processing time and administrative overhead.\n- Ensure secure, HIPAA-compliant patient data management.\n- Provide real-time visibility into referral status and outcomes.\n\n### Key Features\n- **Referral Management**: Create, track, and manage patient referrals in real-time.\n- **Clinic Directory**: Searchable directory of participating clinics and specialists.\n- **Patient Dashboard**: Secure portal for patients to view referrals and appointments.\n- **Provider Dashboard**: Comprehensive view of incoming/outgoing referrals.\n- **Referral Agreements**: Digital agreement management between participating facilities.\n- **Status Tracking**: Real-time updates on referral progress and approvals.\n- **Secure Messaging**: HIPAA-compliant communication between providers.\n\n### Architecture\n- React front-end with role-based access control (RBAC).\n- Express/Node API with healthcare data security protocols.\n- MongoDB for patient records, referrals, and clinic data.\n- JWT authentication and encryption for sensitive data.\n\n### Role & Responsibilities\n- **Full Stack Development**: Built end-to-end features including dashboards and referral workflows.\n- **DevOps & CI/CD**: Architected and managed automated deployment pipelines using GitHub Actions.\n- **Monitoring & Logging**: Implemented comprehensive monitoring, alerting, and centralized logging for production systems.\n- **Security & Compliance**: Ensured HIPAA compliance, data encryption, and security best practices.",
-    "summary": "Healthcare referral network with full stack dev and DevOps management.",
-    "startDate": "2026-01-15",
-    "endDate": "2026-04-20",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/patient-referring-platform/dashboard",
-        "thumbnail": "../../assets/images/patient-referring-platform/dashboard"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/referrals",
-        "thumbnail": "../../assets/images/patient-referring-platform/referrals"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/clinics",
-        "thumbnail": "../../assets/images/patient-referring-platform/clinics"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/agreed",
-        "thumbnail": "../../assets/images/patient-referring-platform/agreed"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/patient-referring-platform/login",
-        "thumbnail": "../../assets/images/patient-referring-platform/login"
-      }
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "ReactTS",
-      "NodeJS"
-    ],
-    "classification": "Work"
-  },
-  {
-    "title": "Website Reservation System (Capstone Project)",
-    "description": "## Overview\n\nA capstone project focused on developing a **Website Reservation System** for **John Cezar Waterfun Resort**, which currently operates without an online booking platform. The system aims to streamline reservations, improve customer experience, and support the resort’s business operations.\n\n### Goals\n- Provide customers with a convenient online reservation process.\n- Centralize booking management for the business.\n- Reduce manual reservation errors and improve efficiency.\n\n### Key Features\n- Online reservation and scheduling system.\n- Room and facility availability management.\n- Customer information and booking records.\n- Admin dashboard for reservation monitoring.\n\n### Architecture\n- MERN stack (MongoDB, Express, React, Node.js).\n- RESTful API for reservations, users, and availability.\n- Role-based access for customers and business staff.\n\n### Role & Responsibilities\n- Project Manager and Full Stack Developer.\n- System design, database modeling, and API development.\n- UI/UX design using MUI, Figma, and Canva.\n\n###",
-    "summary": "Capstone MERN-based reservation system for a water resort.",
-    "startDate": "2025-07-15",
-    "endDate": "2025-12-08",
-    "images": [
-      {
-        "isThumbnail": true,
-        "original": "../../assets/images/reservation/reserv1",
-        "thumbnail": "../../assets/images/reservation/reserv1"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/reservation/reserv2",
-        "thumbnail": "../../assets/images/reservation/reserv2"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/reservation/reserv3",
-        "thumbnail": "../../assets/images/reservation/reserv3"
-      },
-      {
-        "isThumbnail": false,
-        "original": "../../assets/images/reservation/reserv4",
-        "thumbnail": "../../assets/images/reservation/reserv4"
-      }
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express",
-      "ReactJS",
-      "NodeJS"
-    ],
-    "classification": "Capstone"
-  },
   {
     "title": "Multi-Tenant SaaS Platform (Live Chat)",
     "description": "## Overview\n\nProduction-grade multi-tenant SaaS platform providing real-time live chat solutions with a **MERN** stack (MongoDB, Express, React, Node.js) and **Socket.io** for real-time communication. The platform includes both a customer-facing chat widget and a comprehensive admin portal for conversation management.\n\n### Goals\n- Enable businesses to communicate with customers in real-time.\n- Provide intuitive chat management tools for support teams.\n- Support multiple tenants with complete data isolation and custom branding.\n- Deliver scalable, low-latency messaging infrastructure.\n\n### Key Features\n- **Live Chat Widget**: Customizable, embeddable chat widget for websites.\n- **Agent Portal**: Dashboard for managing conversations, queues, and chat history.\n- **Queue Management**: Intelligent routing and queue monitoring for incoming chats.\n- **Chat History**: Persistent conversation storage with search and filtering.\n- **Multi-Tenant Architecture**: Secure data isolation across multiple clients.\n- **Real-Time Notifications**: Instant updates for agents and customers using WebSockets.\n- **Admin Dashboard**: Tenant metrics, analytics, and configuration management.\n\n### Architecture\n- React + Socket.io front-end with real-time state synchronization.\n- Express/Node API with tenant middleware for multi-tenancy.\n- MongoDB schemas for `Conversation`, `Message`, `Agent`, and `Tenant`.\n- WebSocket server for real-time bidirectional communication.\n- Redis for message queuing and session management.\n\n### Role & Responsibilities\n- **Project Architect**: Designed multi-tenant system architecture and data models.\n- **Team Lead**: Led development, code reviews, and technical decision-making.\n- **Core Developer**: Implemented real-time messaging engine, widget, and admin portal.\n- **Performance Optimization**: Optimized WebSocket connections and database queries.",
@@ -218,6 +44,179 @@
       "NodeJS",
       "Websockets"
     ],
-    "classification": "OJT"
+    "classification": "Work"
+  },
+  {
+    "title": "Patient Referral Network Platform",
+    "description": "## Overview\n\nA healthcare technology platform built with **MERN** stack that streamlines patient referrals between clinics and healthcare providers. The system enables seamless communication, referral tracking, and secure patient data management across a network of medical facilities.\n\n### Goals\n- Simplify patient referral workflows between healthcare providers.\n- Reduce referral processing time and administrative overhead.\n- Ensure secure, HIPAA-compliant patient data management.\n- Provide real-time visibility into referral status and outcomes.\n\n### Key Features\n- **Referral Management**: Create, track, and manage patient referrals in real-time.\n- **Clinic Directory**: Searchable directory of participating clinics and specialists.\n- **Patient Dashboard**: Secure portal for patients to view referrals and appointments.\n- **Provider Dashboard**: Comprehensive view of incoming/outgoing referrals.\n- **Referral Agreements**: Digital agreement management between participating facilities.\n- **Status Tracking**: Real-time updates on referral progress and approvals.\n- **Secure Messaging**: HIPAA-compliant communication between providers.\n\n### Architecture\n- React front-end with role-based access control (RBAC).\n- Express/Node API with healthcare data security protocols.\n- MongoDB for patient records, referrals, and clinic data.\n- JWT authentication and encryption for sensitive data.\n\n### Role & Responsibilities\n- **Full Stack Development**: Built end-to-end features including dashboards and referral workflows.\n- **DevOps & CI/CD**: Architected and managed automated deployment pipelines using GitHub Actions.\n- **Monitoring & Logging**: Implemented comprehensive monitoring, alerting, and centralized logging for production systems.\n- **Security & Compliance**: Ensured HIPAA compliance, data encryption, and security best practices.",
+    "summary": "Healthcare referral network with full stack dev and DevOps management.",
+    "startDate": "2026-01-15",
+    "endDate": "2026-04-20",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/patient-referring-platform/dashboard",
+        "thumbnail": "../../assets/images/patient-referring-platform/dashboard"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/referrals",
+        "thumbnail": "../../assets/images/patient-referring-platform/referrals"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/clinics",
+        "thumbnail": "../../assets/images/patient-referring-platform/clinics"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/agreed",
+        "thumbnail": "../../assets/images/patient-referring-platform/agreed"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/patient-referring-platform/login",
+        "thumbnail": "../../assets/images/patient-referring-platform/login"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactTS",
+      "NodeJS"
+    ],
+    "classification": "Work"
+  },
+  {
+    "title": "E-Commerce Website",
+    "description": "## Overview\n\nShopify storefront customized with **Liquid**, supported by **Node.js + Express** services.\n\n### Key Features\n- Fast product search\n- Persistent cart and checkout\n- Webhook integrations\n\n### Role & Responsibilities\n- Theme customization\n- Webhook and discount logic",
+    "summary": "Shopify + Node services with fast checkout and search.",
+    "startDate": "2025-01-05",
+    "endDate": "2025-12-20",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/e-commerce/ecom_1",
+        "thumbnail": "../../assets/images/e-commerce/ecom_1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/e-commerce/ecom_2",
+        "thumbnail": "../../assets/images/e-commerce/ecom_2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/e-commerce/ecom_3",
+        "thumbnail": "../../assets/images/e-commerce/ecom_3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "Shopify",
+      "Liquid",
+      "NodeJS"
+    ],
+    "classification": "Work"
+  },
+  {
+    "title": "Real Estate Website",
+    "description": "## Overview\n\nProduction-grade real estate platform built with the **MERN** stack (MongoDB, Express, React, Node.js) and **MUI**. Enables buyers to discover properties via fast search, granular filters, and rich detail pages with agent contact workflows.\n\n### Goals\n- Help users find relevant listings quickly with robust search.\n- Provide trustworthy, engaging listing pages with complete details.\n- Improve lead generation via integrated agent contact forms.\n\n### Key Features\n- Faceted search: location, price range, bedrooms, bathrooms, amenities.\n- Sort by relevance, newest, price, and proximity.\n- Mobile-first UI with responsive image galleries and thumbnails.\n- Saved filters and deep-linked, SEO-friendly URLs.\n\n### Architecture\n- React + MUI front-end with route-based code splitting.\n- Express/Node API for listings, agents, and saved searches.\n- MongoDB schemas for `Listing`, `Agent`, and `Inquiry`.\n- Image CDN + lazy loading for fast media delivery.\n\n### Role & Responsibilities\n- Designed schema and API endpoints.\n- Implemented search/filter UX and gallery.",
+    "summary": "MERN real estate platform with fast search, filters, and lead flows.",
+    "startDate": "2024-01-01",
+    "endDate": "2024-12-30",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/real-estate/real_estate1",
+        "thumbnail": "../../assets/images/real-estate/real_estate1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/real-estate/real_estate2",
+        "thumbnail": "../../assets/images/real-estate/real_estate2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/real-estate/real_estate3",
+        "thumbnail": "../../assets/images/real-estate/real_estate3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
+      "NodeJS",
+      "Microservices"
+    ],
+    "classification": "Work"
+  },
+  {
+    "title": "Financial Technology Website",
+    "description": "## Overview\n\nMERN-based financial services site with product catalog, calculators, and secure contact flows.\n\n### Key Features\n- Loan calculators and amortization charts\n- Referral tracking system\n- Secure forms and validation\n\n### Role & Responsibilities\n- Implemented calculators and charts\n- Built secure endpoints",
+    "summary": "Financial SaaS with calculators, referrals, and secure forms.",
+    "startDate": "2023-05-01",
+    "endDate": "2024-01-01",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/financial/cfs1",
+        "thumbnail": "../../assets/images/financial/cfs1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/financial/cfs2",
+        "thumbnail": "../../assets/images/financial/cfs2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/financial/cfs3",
+        "thumbnail": "../../assets/images/financial/cfs3"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
+      "NodeJS",
+      "Microservices"
+    ],
+    "classification": "Work"
+  },
+  {
+    "title": "Website Reservation System (Capstone Project)",
+    "description": "## Overview\n\nA capstone project focused on developing a **Website Reservation System** for **John Cezar Waterfun Resort**, which currently operates without an online booking platform. The system aims to streamline reservations, improve customer experience, and support the resort’s business operations.\n\n### Goals\n- Provide customers with a convenient online reservation process.\n- Centralize booking management for the business.\n- Reduce manual reservation errors and improve efficiency.\n\n### Key Features\n- Online reservation and scheduling system.\n- Room and facility availability management.\n- Customer information and booking records.\n- Admin dashboard for reservation monitoring.\n\n### Architecture\n- MERN stack (MongoDB, Express, React, Node.js).\n- RESTful API for reservations, users, and availability.\n- Role-based access for customers and business staff.\n\n### Role & Responsibilities\n- Project Manager and Full Stack Developer.\n- System design, database modeling, and API development.\n- UI/UX design using MUI, Figma, and Canva.\n\n###",
+    "summary": "Capstone MERN-based reservation system for a water resort.",
+    "startDate": "2025-07-15",
+    "endDate": "2025-12-08",
+    "images": [
+      {
+        "isThumbnail": true,
+        "original": "../../assets/images/reservation/reserv1",
+        "thumbnail": "../../assets/images/reservation/reserv1"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv2",
+        "thumbnail": "../../assets/images/reservation/reserv2"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv3",
+        "thumbnail": "../../assets/images/reservation/reserv3"
+      },
+      {
+        "isThumbnail": false,
+        "original": "../../assets/images/reservation/reserv4",
+        "thumbnail": "../../assets/images/reservation/reserv4"
+      }
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express",
+      "ReactJS",
+      "NodeJS"
+    ],
+    "classification": "Capstone"
   }
 ]

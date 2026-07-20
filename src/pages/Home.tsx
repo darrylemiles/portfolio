@@ -9,7 +9,7 @@ import ProjectCard from '../components/ProjectCard'
 import Chip from '../components/Chip'
 import ContactForm from '../sections/home/ContactForm'
 import { PROFILE_IMAGE_URL } from '../constants/profile'
-import { getProjects } from '../utils/projects'
+import { getProjects, groupProjectsByClassification } from '../utils/projects'
 
 const MotionBox = motion.create(Box)
 const email = 'dmilesbacay@gmail.com'
@@ -41,8 +41,22 @@ const SectionHeading: React.FC<{ eyebrow: string; title: string; description?: s
   </Stack>
 )
 
+const getProjectGroupDescription = (classification: string) => {
+  switch (classification.toLowerCase()) {
+    case 'work':
+      return 'Client and production-facing systems built for real business workflows, maintainability, and delivery quality.'
+    case 'ojt':
+      return 'Applied training and industry experience focused on real-time product architecture and team delivery.'
+    case 'capstone':
+      return 'Academic project work with end-to-end ownership across planning, design, development, and implementation.'
+    default:
+      return 'Additional selected builds grouped from the project source data.'
+  }
+}
+
 const Home: React.FC = () => {
   const projects = useMemo(() => getProjects(), [])
+  const projectGroups = useMemo(() => groupProjectsByClassification(projects), [projects])
   const techStack = useMemo(
     () => Array.from(new Set(projects.flatMap((project) => project.techStack))).sort(),
     [projects],
@@ -297,16 +311,50 @@ const Home: React.FC = () => {
             description="Projects are rendered directly from the portfolio JSON source, preserving the current order and content while giving each piece a more cinematic presentation."
           />
 
-          <Box>
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                index={index}
-                onOpen={(slug) => navigate(`/projects/${slug}`)}
-              />
+          <Stack spacing={{ xs: 7, md: 10 }}>
+            {projectGroups.map((group) => (
+              <Box key={group.classification}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 0.72fr) minmax(0, 1fr)' },
+                    gap: { xs: 1.5, md: 5 },
+                    alignItems: 'end',
+                    pb: { xs: 2.5, md: 3.5 },
+                    borderBottom: '1px solid',
+                    borderColor: 'divider',
+                  }}
+                >
+                  <Stack direction="row" alignItems="baseline" gap={1.5} flexWrap="wrap">
+                    <Typography variant="h3" component="h3">
+                      {group.classification}
+                    </Typography>
+                    <Typography variant="overline" color="primary" sx={{ fontWeight: 800, letterSpacing: '0.14em' }}>
+                      {group.projects.length} {group.projects.length === 1 ? 'Project' : 'Projects'}
+                    </Typography>
+                  </Stack>
+                  <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 680 }}>
+                    {getProjectGroupDescription(group.classification)}
+                  </Typography>
+                </Box>
+
+                <Box>
+                  {group.projects.map((project, groupIndex) => {
+                    const globalIndex = projects.findIndex((item) => item.slug === project.slug)
+
+                    return (
+                      <ProjectCard
+                        key={project.slug}
+                        project={project}
+                        index={globalIndex >= 0 ? globalIndex : groupIndex}
+                        onOpen={(slug) => navigate(`/projects/${slug}`)}
+                      />
+                    )
+                  })}
+                </Box>
+              </Box>
             ))}
-          </Box>
+          </Stack>
         </Box>
 
         <MotionBox
