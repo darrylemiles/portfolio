@@ -1,54 +1,64 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Box, Typography, Button, Grid, Card, CardMedia, Container, Dialog, DialogContent, IconButton, useTheme, useMediaQuery } from '@mui/material'
-import { ArrowLeftOutlined, LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons'
+import {
+  Box,
+  Typography,
+  Button,
+  Grid,
+  Container,
+  Dialog,
+  DialogContent,
+  IconButton,
+  Stack,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material'
+import {
+  ArrowLeftOutlined,
+  LeftOutlined,
+  RightOutlined,
+  CloseOutlined,
+  GithubOutlined,
+  GlobalOutlined,
+} from '@ant-design/icons'
+import { motion, useReducedMotion } from 'framer-motion'
 
 import ReactMarkdown from 'react-markdown'
-import projects from '../../data/projects.json'
-import MainCard from '../../components/MainCard'
-import ConvertDate from '../../components/ConvertDate'
 import Chip from '../../components/Chip'
+import { getProjectBySlug, getProjects } from '../../utils/projects'
 
-const assetModules = import.meta.glob('../../assets/images/**/*.{png,jpg,jpeg,webp,gif,svg}', {
-  eager: true,
-  import: 'default'
-}) as Record<string, string>
-
-const resolveImage = (basePath: string): string => {
-  if (!basePath) return ''
-  const matchKey = Object.keys(assetModules).find((k) => k.startsWith(basePath))
-  return matchKey ? assetModules[matchKey] : ''
-}
+const MotionBox = motion.create(Box)
 
 const Details: React.FC = () => {
   const { title } = useParams<{ title: string }>()
   const navigate = useNavigate()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const reduceMotion = useReducedMotion()
+  const projects = useMemo(() => getProjects(), [])
+  const project = useMemo(() => getProjectBySlug(title), [title])
 
   const [imageViewerOpen, setImageViewerOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const project = projects.find(proj => {
-    const urlTitle = proj.title.toLowerCase().replace(/\s+/g, '-')
-    return decodeURIComponent(title || '').toLowerCase() === urlTitle
-  })
-
-  const currentProjectIndex = projects.findIndex(proj => {
-    const urlTitle = proj.title.toLowerCase().replace(/\s+/g, '-')
-    return decodeURIComponent(title || '').toLowerCase() === urlTitle
-  })
+  const currentProjectIndex = project ? projects.findIndex((item) => item.slug === project.slug) : -1
 
   if (!project) {
     return (
-      <Box sx={{ textAlign: 'center', py: 8 }}>
-        <Typography variant="h4" gutterBottom>
-          Project Not Found
-        </Typography>
-        <Button startIcon={<ArrowLeftOutlined />} onClick={() => navigate('/')}>
-          Back to Home
-        </Button>
-      </Box>
+      <Container maxWidth="md">
+        <Box sx={{ textAlign: 'center', py: { xs: 10, md: 16 } }}>
+          <Typography variant="overline" color="primary">404</Typography>
+          <Typography variant="h2" component="h1" gutterBottom>
+            Project Not Found
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+            The project URL does not match an entry in the portfolio project data.
+          </Typography>
+          <Button startIcon={<ArrowLeftOutlined />} onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}>
+            Back to Work
+          </Button>
+        </Box>
+      </Container>
     )
   }
 
@@ -57,188 +67,217 @@ const Details: React.FC = () => {
     setImageViewerOpen(true)
   }
 
-  const handleCloseViewer = () => {
-    setImageViewerOpen(false)
-  }
-
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) =>
-      prev === 0 ? project.images.length - 1 : prev - 1
+      prev === 0 ? project.imageSources.length - 1 : prev - 1,
     )
   }
 
   const handleNextImage = () => {
     setCurrentImageIndex((prev) =>
-      prev === project.images.length - 1 ? 0 : prev + 1
+      prev === project.imageSources.length - 1 ? 0 : prev + 1,
     )
   }
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'ArrowLeft') {
-      handlePrevImage()
-    } else if (event.key === 'ArrowRight') {
-      handleNextImage()
-    } else if (event.key === 'Escape') {
-      handleCloseViewer()
-    }
+    if (event.key === 'ArrowLeft') handlePrevImage()
+    if (event.key === 'ArrowRight') handleNextImage()
+    if (event.key === 'Escape') setImageViewerOpen(false)
   }
 
-  const handlePrevProject = () => {
-    const prevIndex = currentProjectIndex === 0 ? projects.length - 1 : currentProjectIndex - 1
-    const prevProject = projects[prevIndex]
-    const urlTitle = encodeURIComponent(prevProject.title.toLowerCase().replace(/\s+/g, '-'))
-    navigate(`/projects/${urlTitle}`)
-  }
+  const navigateProject = (direction: 'previous' | 'next') => {
+    const fallbackIndex = currentProjectIndex < 0 ? 0 : currentProjectIndex
+    const targetIndex = direction === 'previous'
+      ? (fallbackIndex === 0 ? projects.length - 1 : fallbackIndex - 1)
+      : (fallbackIndex === projects.length - 1 ? 0 : fallbackIndex + 1)
 
-  const handleNextProject = () => {
-    const nextIndex = currentProjectIndex === projects.length - 1 ? 0 : currentProjectIndex + 1
-    const nextProject = projects[nextIndex]
-    const urlTitle = encodeURIComponent(nextProject.title.toLowerCase().replace(/\s+/g, '-'))
-    navigate(`/projects/${urlTitle}`)
+    navigate(`/projects/${projects[targetIndex].slug}`)
   }
 
   return (
-    <Container>
-      <MainCard>
-        <Box sx={{ mb: 4 }} data-aos="fade-up">
-          <Button
-            startIcon={<ArrowLeftOutlined />}
-            onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}
-            sx={{ mb: 2 }}
+    <Container maxWidth="xl">
+      <Box sx={{ py: { xs: 3, md: 5 } }}>
+        <Button
+          startIcon={<ArrowLeftOutlined />}
+          onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}
+          sx={{ mb: { xs: 4, md: 7 } }}
+        >
+          Back to Work
+        </Button>
+
+        <MotionBox
+          initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) 360px' },
+              gap: { xs: 4, md: 7 },
+              alignItems: 'end',
+              pb: { xs: 5, md: 8 },
+              borderBottom: '1px solid',
+              borderColor: 'divider',
+            }}
           >
-            Back to Projects
-          </Button>
+            <Stack spacing={2.5}>
+              <Stack direction="row" gap={1} flexWrap="wrap">
+                <Chip text={project.classification} small />
+                <Chip text={project.period} small />
+                {project.status && <Chip text={project.status} small />}
+              </Stack>
+              <Typography variant="h1" component="h1" sx={{ maxWidth: 1020 }}>
+                {project.title}
+              </Typography>
+              <Typography variant="h5" component="p" color="text.secondary" sx={{ maxWidth: 760, fontWeight: 500 }}>
+                {project.summary}
+              </Typography>
+            </Stack>
 
-          <Typography variant="h3" component="h1" gutterBottom>
-            {project.title}
-          </Typography>
+            <Stack spacing={2} alignItems={{ xs: 'stretch', md: 'flex-end' }}>
+              <Stack direction="row" gap={1} flexWrap="wrap" justifyContent={{ xs: 'flex-start', md: 'flex-end' }}>
+                {project.techStack.map((tech) => (
+                  <Chip key={tech} text={tech} small />
+                ))}
+              </Stack>
+              <Stack direction="row" gap={1} flexWrap="wrap" justifyContent={{ xs: 'flex-start', md: 'flex-end' }}>
+                {project.liveUrl && (
+                  <Button component="a" href={project.liveUrl} target="_blank" rel="noreferrer" variant="outlined" startIcon={<GlobalOutlined />}>
+                    Live
+                  </Button>
+                )}
+                {project.githubUrl && (
+                  <Button component="a" href={project.githubUrl} target="_blank" rel="noreferrer" variant="outlined" startIcon={<GithubOutlined />}>
+                    Code
+                  </Button>
+                )}
+              </Stack>
+            </Stack>
+          </Box>
 
-          <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 2 }}>
-            <ConvertDate dateString={project.startDate} /> - <ConvertDate dateString={project.endDate} />
-          </Typography>
-
-          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 3 }}>
-            {project.techStack.map((tech) => (
-              <Chip key={tech} text={tech} />
+          <Grid container spacing={2} sx={{ py: { xs: 5, md: 8 } }}>
+            {project.imageSources.map((imageSrc, index) => (
+              <Grid
+                key={`${project.slug}-${project.images[index]?.original ?? imageSrc}`}
+                size={{ md: index === 0 ? 8 : 4, xs: 12 }}
+              >
+                <Box
+                  component="button"
+                  type="button"
+                  onClick={() => handleImageClick(index)}
+                  aria-label={`Open ${project.title} screenshot ${index + 1}`}
+                  sx={{
+                    width: '100%',
+                    p: 0,
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    bgcolor: 'background.paper',
+                    boxShadow: theme => theme.palette.mode === 'light'
+                      ? '0 20px 54px rgba(30, 33, 27, 0.12)'
+                      : '0 20px 64px rgba(0, 0, 0, 0.34)',
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={imageSrc}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    loading={index > 1 ? 'lazy' : 'eager'}
+                    sx={{
+                      width: '100%',
+                      height: { xs: 260, md: index === 0 ? 520 : 250 },
+                      display: 'block',
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      transition: 'transform 500ms ease',
+                      '&:hover': {
+                        transform: 'scale(1.025)',
+                      },
+                    }}
+                  />
+                </Box>
+              </Grid>
             ))}
+          </Grid>
+
+          <Box
+            sx={{
+              gridTemplateColumns: { xs: '1fr', md: '280px minmax(0, 780px)' },
+              gap: { xs: 3, md: 8 },
+              alignItems: 'start',
+              pb: { xs: 7, md: 10 },
+            }}
+          >
+            <Box sx={{
+              '& h2': { color: 'primary.main', mt: 0, mb: 2 },
+              '& h3': { color: 'text.primary', mt: 3, mb: 1 },
+              '& p': { mb: 2, lineHeight: 1.8 },
+              '& ul': { mb: 2, pl: 3 },
+              '& li': { mb: 1 },
+              '& strong': { color: 'text.primary' },
+              '& code': {
+                backgroundColor: theme => theme.palette.mode === 'light' ? 'rgba(30, 33, 27, 0.08)' : 'rgba(255,255,255,0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px',
+                fontSize: '0.9em',
+              },
+            }}>
+              <ReactMarkdown>{project.description}</ReactMarkdown>
+            </Box>
           </Box>
 
           {projects.length > 1 && (
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-              <Button
-                startIcon={<LeftOutlined />}
-                onClick={handlePrevProject}
-                variant="outlined"
-                size="small"
-                sx={{ minWidth: 120 }}
-              >
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              gap={2}
+              sx={{ py: 4, borderTop: '1px solid', borderColor: 'divider' }}
+            >
+              <Button startIcon={<LeftOutlined />} onClick={() => navigateProject('previous')} variant="outlined">
                 Previous
               </Button>
-
               <Typography variant="body2" color="text.secondary">
                 {currentProjectIndex + 1} of {projects.length}
               </Typography>
-
-              <Button
-                endIcon={<RightOutlined />}
-                onClick={handleNextProject}
-                variant="outlined"
-                size="small"
-                sx={{ minWidth: 120 }}
-              >
+              <Button endIcon={<RightOutlined />} onClick={() => navigateProject('next')} variant="outlined">
                 Next
               </Button>
-            </Box>
+            </Stack>
           )}
-        </Box>
-
-        <Grid container spacing={2} sx={{ mb: 4 }}>
-          {project.images.map((image, index) => (
-            <Grid key={index} size={{ md: 4, xs: 12 }} data-aos="zoom-in" data-aos-delay={index * 100}>
-              <Card sx={{ cursor: 'pointer', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.02)' } }}>
-                <CardMedia
-                  component="img"
-                  image={resolveImage(image.original)}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  sx={{ height: 250, objectFit: 'cover' }}
-                  onClick={() => handleImageClick(index)}
-                />
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Box data-aos="fade-up" sx={{
-          '& h2': { color: 'primary.main', mt: 3, mb: 2 },
-          '& h3': { color: 'text.primary', mt: 2, mb: 1 },
-          '& p': { mb: 2, lineHeight: 1.7 },
-          '& ul': { mb: 2 },
-          '& li': { mb: 1 },
-          '& strong': { color: 'primary.light' },
-          '& em': { color: 'secondary.main' },
-          '& code': {
-            backgroundColor: 'rgba(255,255,255,0.1)',
-            padding: '2px 6px',
-            borderRadius: '4px',
-            fontSize: '0.9em'
-          },
-          '& blockquote': {
-            borderLeft: '4px solid',
-            borderColor: 'primary.main',
-            pl: 2,
-            ml: 0,
-            fontStyle: 'italic',
-            color: 'text.secondary'
-          }
-        }}>
-          <ReactMarkdown>{project.description}</ReactMarkdown>
-        </Box>
-      </MainCard>
+        </MotionBox>
+      </Box>
 
       <Dialog
         open={imageViewerOpen}
-        onClose={handleCloseViewer}
+        onClose={() => setImageViewerOpen(false)}
         maxWidth="lg"
         fullWidth
         sx={{
           '& .MuiDialog-paper': {
             backgroundColor: 'rgba(0, 0, 0, 0.95)',
             margin: isMobile ? 1 : 2,
-          }
+          },
         }}
         onKeyDown={handleKeyDown}
       >
         <DialogContent sx={{ position: 'relative', p: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <IconButton
-            onClick={handleCloseViewer}
-            sx={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              zIndex: 2,
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              }
-            }}
+            onClick={() => setImageViewerOpen(false)}
+            aria-label="Close image viewer"
+            sx={{ position: 'absolute', top: 16, right: 16, color: 'white', bgcolor: 'rgba(0, 0, 0, 0.5)', zIndex: 2 }}
           >
             <CloseOutlined />
           </IconButton>
 
-          {project.images.length > 1 && (
+          {project.imageSources.length > 1 && (
             <IconButton
               onClick={handlePrevImage}
-              sx={{
-                position: 'absolute',
-                left: 16,
-                color: 'white',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                zIndex: 2,
-                '&:hover': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                }
-              }}
+              aria-label="Previous screenshot"
+              sx={{ position: 'absolute', left: 16, color: 'white', bgcolor: 'rgba(0, 0, 0, 0.5)', zIndex: 2 }}
             >
               <LeftOutlined />
             </IconButton>
@@ -246,91 +285,19 @@ const Details: React.FC = () => {
 
           <Box
             component="img"
-            src={resolveImage(project.images[currentImageIndex]?.original)}
+            src={project.imageSources[currentImageIndex]}
             alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-            sx={{
-              maxWidth: '100%',
-              maxHeight: '90vh',
-              objectFit: 'contain',
-              display: 'block'
-            }}
+            sx={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', display: 'block' }}
           />
 
-          {project.images.length > 1 && (
+          {project.imageSources.length > 1 && (
             <IconButton
               onClick={handleNextImage}
-              sx={{
-                position: 'absolute',
-                right: 16,
-                color: 'white',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                zIndex: 2,
-                '&:hover': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                }
-              }}
+              aria-label="Next screenshot"
+              sx={{ position: 'absolute', right: 16, color: 'white', bgcolor: 'rgba(0, 0, 0, 0.5)', zIndex: 2 }}
             >
               <RightOutlined />
             </IconButton>
-          )}
-
-          {project.images.length > 1 && (
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: 16,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                color: 'white',
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                typography: 'body2'
-              }}
-            >
-              {currentImageIndex + 1} / {project.images.length}
-            </Box>
-          )}
-
-          {project.images.length > 1 && !isMobile && (
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: 60,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                gap: 1,
-                maxWidth: '80%',
-                overflowX: 'auto',
-                pb: 1
-              }}
-            >
-              {project.images.map((image, index) => (
-                <Box
-                  key={index}
-                  component="img"
-                  src={resolveImage(image.thumbnail)}
-                  alt={`Thumbnail ${index + 1}`}
-                  onClick={() => setCurrentImageIndex(index)}
-                  sx={{
-                    width: 60,
-                    height: 40,
-                    objectFit: 'cover',
-                    cursor: 'pointer',
-                    borderRadius: 1,
-                    border: currentImageIndex === index ? '2px solid white' : '2px solid transparent',
-                    opacity: currentImageIndex === index ? 1 : 0.6,
-                    transition: 'all 0.2s',
-                    '&:hover': {
-                      opacity: 1,
-                      transform: 'scale(1.05)'
-                    }
-                  }}
-                />
-              ))}
-            </Box>
           )}
         </DialogContent>
       </Dialog>

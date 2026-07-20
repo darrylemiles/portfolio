@@ -3,15 +3,15 @@ import emailjs from '@emailjs/browser'
 import React, { useRef, useState } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 
-const SERVICE_ID = (import.meta as any).env?.VITE_SERVICE_ID ?? ''
-const TEMPLATE_ID = (import.meta as any).env?.VITE_TEMPLATE_ID ?? ''
-const PUBLIC_KEY = (import.meta as any).env?.VITE_PUBLIC_KEY ?? ''
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID ?? ''
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID ?? ''
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY ?? ''
 
-const RECAPTCHA_SITE_KEY = (import.meta as any).env?.VITE_RECAPTCHA_SITE_KEY ?? ''
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? ''
 
 const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null)
-  const recaptchaRef = useRef<any>(null)
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null)
   const [isSending, setIsSending] = useState(false)
   const [recaptchaToken, setRecaptchaToken] = useState<string>('')
   const [successMessage, setSuccessMessage] = useState('')
@@ -206,7 +206,7 @@ const ContactForm: React.FC = () => {
             <Box>
               <ReCAPTCHA
                 sitekey={RECAPTCHA_SITE_KEY}
-                onChange={(token: any) => setRecaptchaToken(token ?? '')}
+                onChange={(token: string | null) => setRecaptchaToken(token ?? '')}
                 ref={recaptchaRef}
               />
             </Box>

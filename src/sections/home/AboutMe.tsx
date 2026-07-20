@@ -9,6 +9,7 @@ import React from 'react'
 import MainCard from '../../components/MainCard'
 import DownloadCvButton from '../../components/DownloadCvButton'
 import Chip from '../../components/Chip'
+import { PROFILE_IMAGE_URL } from '../../constants/profile'
 
 const AboutMe: React.FC = () => {
   const today = new Date();
@@ -29,7 +30,7 @@ const AboutMe: React.FC = () => {
           <Box sx={{ display: 'flex' }}>
             <Box
               component='img'
-              src='https://avatars.githubusercontent.com/u/137563011?s=400&u=71da270fe08fe3b6ab43e481bb8c92d870214f13&v=4'
+              src={PROFILE_IMAGE_URL}
               alt='Profile Picture'
               sx={{
                 width: { xs: '20%', md: '100%' },
