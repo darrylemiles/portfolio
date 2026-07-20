@@ -7,7 +7,7 @@ import React from 'react'
 
 type DateFormat = 'short' | 'long' | undefined
 
-export const convertToWordDate = (
+const convertToWordDate = (
   {
     inputDate,
     time = false,

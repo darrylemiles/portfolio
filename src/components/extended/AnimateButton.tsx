@@ -1,11 +1,11 @@
 import React from 'react';
 
 // third-party
-import { motion, useCycle } from 'framer-motion';
+import { motion, useCycle, type HTMLMotionProps } from 'framer-motion';
 
 // ==============================|| ANIMATION BUTTON ||============================== //
 
-interface AnimateButtonProps {
+interface AnimateButtonProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   children: React.ReactNode;
   type?: 'slide' | 'scale' | 'rotate';
   direction?: 'up' | 'down' | 'left' | 'right';
@@ -14,7 +14,6 @@ interface AnimateButtonProps {
     hover?: number;
     tap?: number;
   };
-  [key: string]: any;
 }
 
 export default function AnimateButton({

@@ -11,7 +11,7 @@ const Chip: React.FC<ChipProps> = ({ text, icon, small = false }) => {
   return (
     <Box
       sx={theme => ({
-        background: theme.palette.mode === 'light' ? theme.palette.background.default : '#151B2A',
+        background: theme.palette.mode === 'light' ? 'rgba(255, 252, 245, 0.72)' : 'rgba(245, 241, 232, 0.06)',
         color: theme.palette.text.primary,
         border: `1px solid ${theme.palette.divider}`,
         borderRadius: 2,
