@@ -1,12 +1,14 @@
 import { RouterProvider } from 'react-router-dom'
 import { Box, CssBaseline, GlobalStyles, IconButton, ThemeProvider, Tooltip } from '@mui/material'
 import { Bounce, ToastContainer } from 'react-toastify'
+import { motion, useReducedMotion } from 'framer-motion'
 
 import React from 'react'
 import router from './routes/routes'
 import createAppTheme from './themes/theme'
 import type { PaletteMode } from '@mui/material/styles'
 import { FaMoon, FaSun } from 'react-icons/fa'
+import PortfolioLoader from './components/PortfolioLoader'
 
 // fonts
 import '@fontsource/poppins/400.css';
@@ -21,6 +23,8 @@ import "aos/dist/aos.css";
 import './styles/main.css'
 import './styles/toast.css'
 
+const MotionBox = motion.create(Box)
+
 const App: React.FC = () => {
   const getInitialMode = (): PaletteMode => {
     const storedMode = window.localStorage.getItem('portfolio-color-mode')
@@ -33,6 +37,8 @@ const App: React.FC = () => {
   }
 
   const [mode, setMode] = React.useState<PaletteMode>(getInitialMode)
+  const reduceMotion = useReducedMotion()
+  const [isAppReady, setIsAppReady] = React.useState(false)
 
   const toggleColorMode = () => {
     setMode(currentMode => (currentMode === 'dark' ? 'light' : 'dark'))
@@ -68,6 +74,36 @@ const App: React.FC = () => {
     window.history.replaceState({}, "", url.pathname);
   }, []);
 
+  React.useEffect(() => {
+    if (isAppReady) {
+      return undefined
+    }
+
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+    const bodyStyle = document.body.style
+    const htmlStyle = document.documentElement.style
+    const previousBodyOverflow = bodyStyle.overflow
+    const previousBodyPaddingRight = bodyStyle.paddingRight
+    const previousHtmlOverflow = htmlStyle.overflow
+
+    bodyStyle.overflow = 'hidden'
+    htmlStyle.overflow = 'hidden'
+
+    if (scrollbarWidth > 0) {
+      bodyStyle.paddingRight = `${scrollbarWidth}px`
+    }
+
+    return () => {
+      bodyStyle.overflow = previousBodyOverflow
+      bodyStyle.paddingRight = previousBodyPaddingRight
+      htmlStyle.overflow = previousHtmlOverflow
+    }
+  }, [isAppReady])
+
+  const handleLoaderComplete = React.useCallback(() => {
+    setIsAppReady(true)
+  }, [])
+
   return (
     <ThemeProvider theme={appTheme}>
       <GlobalStyles
@@ -83,6 +119,7 @@ const App: React.FC = () => {
             background: appTheme.palette.background.default,
             color: appTheme.palette.text.primary,
             transition: 'background 200ms ease, color 200ms ease',
+            overflowX: 'hidden',
           },
           '#root': {
             minHeight: '100%',
@@ -134,7 +171,17 @@ const App: React.FC = () => {
           </IconButton>
         </Box>
       </Tooltip>
-      <RouterProvider router={router} />
+      {!isAppReady && <PortfolioLoader onComplete={handleLoaderComplete} />}
+      {isAppReady && (
+        <MotionBox
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: reduceMotion ? 0.16 : 0.42, ease: [0.22, 1, 0.36, 1] }}
+          sx={{ minHeight: '100%' }}
+        >
+          <RouterProvider router={router} />
+        </MotionBox>
+      )}
     </ThemeProvider>
   )
 }
