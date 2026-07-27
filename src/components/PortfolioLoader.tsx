@@ -155,11 +155,11 @@ const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onComplete }) => {
               }}
             >
               <Stack
-                direction="row"
+                direction={{ xs: 'column', sm: 'row' }}
                 justifyContent="space-between"
-                alignItems="flex-start"
+                alignItems={{ xs: 'flex-start', sm: 'flex-start' }}
                 gap={2}
-                flexWrap="wrap"
+                flexWrap="nowrap"
               >
                 <Stack spacing={0.75}>
                   <Typography
@@ -182,6 +182,7 @@ const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onComplete }) => {
                     textTransform: 'uppercase',
                     color: 'text.secondary',
                     whiteSpace: 'nowrap',
+                    mt: { xs: 0.5, sm: 0 },
                   }}
                 >
                   {status}
@@ -208,11 +209,11 @@ const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onComplete }) => {
 
                 <Stack spacing={1.5} sx={{ alignSelf: 'end', maxWidth: 720 }}>
                   <Stack
-                    direction="row"
-                    alignItems="baseline"
-                    justifyContent="space-between"
+                      direction={{ xs: 'column', sm: 'row' }}
+                      alignItems={{ xs: 'flex-start', sm: 'baseline' }}
+                      justifyContent="space-between"
                     gap={2}
-                    flexWrap="wrap"
+                      flexWrap="nowrap"
                   >
                     <Typography
                       variant="body2"
@@ -221,6 +222,7 @@ const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onComplete }) => {
                         fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
                         letterSpacing: '0.16em',
                         textTransform: 'uppercase',
+                          order: { xs: 2, sm: 1 },
                       }}
                     >
                       {status}
@@ -229,11 +231,13 @@ const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onComplete }) => {
                       variant="h1"
                       component="p"
                       sx={{
+                          order: { xs: 1, sm: 2 },
                         fontVariantNumeric: 'tabular-nums',
                         fontFeatureSettings: '"tnum" 1',
                         lineHeight: 0.9,
                         letterSpacing: '-0.04em',
                         fontSize: 'clamp(3.5rem, 15vw, 8rem)',
+                          whiteSpace: 'nowrap',
                       }}
                     >
                       {progress}%
