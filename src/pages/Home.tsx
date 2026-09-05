@@ -517,9 +517,6 @@ const Home: React.FC = () => {
                 LinkedIn
               </Button>
             </Stack>
-            <Typography variant="body2" color="text.secondary">
-              Portfolio domain: darrylebacay.dev
-            </Typography>
           </Stack>
           <ContactForm />
         </Box>
